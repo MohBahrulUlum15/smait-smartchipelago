@@ -43,8 +43,8 @@
                                                 <th scope="row" class="text-center">
                                                     #
                                                 </th>
-                                                <th>Program</th>
-                                                <th>Image</th>
+                                                <th>Nama</th>
+                                                <th class="text-center">Gambar</th>
                                                 <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
@@ -54,10 +54,15 @@
                                                     <th class="text-center align-middle">
                                                         {{ $loop->iteration }}</th>
                                                     <td class="align-middle">{{ $item->nama_program }}</td>
-                                                    <td class="align-middle">
+                                                    <td class="align-middle text-center">
                                                         @if ($item->foto)
-                                                            <img src="{{ asset($item->foto) }}" alt="image"
-                                                                width="50">
+                                                            <div class="d-flex justify-content-center">
+                                                                <div style="width: 80px; height: 60px; overflow: hidden;">
+                                                                    <img src="{{ asset($item->foto) }}" alt="image"
+                                                                        class="img-fluid"
+                                                                        style="height: 100%; object-fit: contain;">
+                                                                </div>
+                                                            </div>
                                                         @else
                                                             <span>No Image</span>
                                                         @endif
@@ -88,7 +93,7 @@
                                                         <button class="close" data-dismiss="alert">
                                                             <span>&times;</span>
                                                         </button>
-                                                        Belum ada data misi!.
+                                                        Belum ada data!.
                                                     </div>
                                                 </div>
                                             @endforelse

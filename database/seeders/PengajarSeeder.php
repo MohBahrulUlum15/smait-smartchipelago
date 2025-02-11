@@ -22,7 +22,7 @@ class PengajarSeeder extends Seeder
             \App\Models\Pengajar::create([
                 'nama' => 'Pengajar ' . $i,
                 'jabatan' => 'Jabatan Pengajar ' . $i,
-                'foto' => 'https://placehold.co/300x300/png',
+                'foto' => 'https://placehold.co/300x400/png',
                 'nomor_hp' => '08123456789',
                 'facebook' => 'https://facebook.com/pengajar' . $i,
                 'instagram' => 'https://instagram.com/pengajar' . $i,
