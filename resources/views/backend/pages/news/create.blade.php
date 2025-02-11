@@ -38,7 +38,7 @@
             <div class="section-header">
 
                 <div class="section-header-back">
-                    <a href="{{ route('news-backend.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+                    <a href="{{ route('berita.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <h1>Buat Berita</h1>
                 <div class="section-header-breadcrumb">
@@ -76,7 +76,7 @@
                                 @endif
                                 <div class="clearfix mb-2"></div>
 
-                                <form action="{{ route('news-backend.store') }}" method="POST"
+                                <form action="{{ route('berita.store') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group row mb-3">

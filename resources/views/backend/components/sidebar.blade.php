@@ -48,8 +48,8 @@
                 <a class="nav-link" href="#"><i class="fas fa-newspaper"></i>
                     <span>Kegiatan</span></a>
             </li>
-            <li class="{{ Request::is('news-backend*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('news-backend.index') }}"><i class="fas fa-newspaper"></i>
+            <li class="{{ Request::is('berita*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('berita.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Berita</span></a>
             </li>
             <li class="{{ Request::is('artikel*') ? 'active' : '' }}">

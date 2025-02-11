@@ -33,7 +33,7 @@
                         <div class="card">
                             <div class="card-body">
                                 {{-- <div class="float-left">
-                                    <form action="{{ route('news-backend.index') }}" method="GET">
+                                    <form action="{{ route('berita.index') }}" method="GET">
                                         <div class="input-group">
                                             <label for="perPage">Show entries</label>
                                             <select name="perPage" class="form-control selectric"
@@ -53,7 +53,7 @@
                                     </form>
                                 </div>
                                 <div class="float-right">
-                                    <form action="{{ route('news-backend.index') }}" method="GET">
+                                    <form action="{{ route('berita.index') }}" method="GET">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" name="search"
                                                 value="{{ request('search') }}">
@@ -65,7 +65,7 @@
                                     </form>
                                 </div> --}}
                                 <div class="float-right mb-3">
-                                    <a href="{{ route('news-backend.create') }}" class="btn btn-primary">Tambah Berita
+                                    <a href="{{ route('berita.create') }}" class="btn btn-primary">Tambah Berita
                                     </a>
                                 </div>
                                 {{-- Data Table --}}
@@ -105,12 +105,12 @@
                                                     </td>
                                                     <td class="align-middle">
                                                         <div class="d-flex justify-content-center">
-                                                            <a href="{{ route('news-backend.edit', $item->id) }}"
+                                                            <a href="{{ route('berita.edit', $item->id) }}"
                                                                 class="btn btn-info btn-sm">
                                                                 <i class="fa-regular fa-pen-to-square"></i>
                                                             </a>
                                                             <div class="clearfix mx-1"></div>
-                                                            <form action="{{ route('news-backend.destroy', $item->id) }}"
+                                                            <form action="{{ route('berita.destroy', $item->id) }}"
                                                                 method="POST" style="display:inline;"
                                                                 onsubmit="return confirm('Yakin ingin menghapus berita ini?')">
                                                                 @csrf
