@@ -88,7 +88,7 @@
                                                     </td>
                                                 </tr>
                                             @empty
-                                                <div class="alert alert-warning alert-dismissible show fade">
+                                                <div class="alert alert-info alert-dismissible show fade">
                                                     <div class="alert-body">
                                                         <button class="close" data-dismiss="alert">
                                                             <span>&times;</span>
