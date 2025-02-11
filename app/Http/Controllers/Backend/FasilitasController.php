@@ -19,7 +19,7 @@ class FasilitasController extends Controller
         return view(
             'backend.pages.fasilitas.index',
             [
-                'page_title' => 'Fasilitas',
+                'pageTitle' => 'Fasilitas',
                 'data' => $fasilitas,
             ]
         );
@@ -31,7 +31,7 @@ class FasilitasController extends Controller
         return view(
             'backend.pages.fasilitas.create',
             [
-                'page_title' => 'Tambah Fasilitas',
+                'pageTitle' => 'Tambah Fasilitas',
             ]
         );
     }
