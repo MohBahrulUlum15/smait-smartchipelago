@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BasePageController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Backend\DashboardController as BackendDashboardController;
+use App\Http\Controllers\Backend\FasilitasController;
 use App\Http\Controllers\Backend\MottoTujuanController;
 use App\Http\Controllers\Backend\NewsController as BackendNewsController;
 use App\Http\Controllers\Backend\PengajarController;
@@ -64,6 +65,14 @@ Route::get('/program/{id}', [ProgramController::class, 'edit'])->name('program.e
 Route::put('/program/{id}', [ProgramController::class, 'update'])->name('program.update');
 Route::delete('/program/{id}', [ProgramController::class, 'destroy'])->name('program.destroy');
 
+// Fasilitas Backend
+Route::get('/fasilitas', [FasilitasController::class, 'index'])->name('fasilitas.index');
+Route::get('/fasilitas/create', [FasilitasController::class, 'create'])->name('fasilitas.create');
+Route::post('/fasilitas', [FasilitasController::class, 'store'])->name('fasilitas.store');
+Route::get('/fasilitas/{id}/', [FasilitasController::class, 'edit'])->name('fasilitas.edit');
+Route::put('/fasilitas/{id}', [FasilitasController::class, 'update'])->name('fasilitas.update');
+Route::delete('/fasilitas/{id}', [FasilitasController::class, 'destroy'])->name('fasilitas.destroy');
+
 // News Backend
 Route::get('/news-backend', [BackendNewsController::class, 'index'])->name('news-backend.index');
 Route::get('/news-backend/create', [BackendNewsController::class, 'create'])->name('news-backend.create');
@@ -71,7 +80,6 @@ Route::post('/news-backend', [BackendNewsController::class, 'store'])->name('new
 Route::get('/news-backend/{id}/edit', [BackendNewsController::class, 'edit'])->name('news-backend.edit');
 Route::put('/news-backend/{id}', [BackendNewsController::class, 'update'])->name('news-backend.update');
 Route::delete('/news-backend/{id}', [BackendNewsController::class, 'destroy'])->name('news-backend.destroy');
-
 
 // ----------------- CLEAR SESSION ROUTE ----------------- //
 Route::post('/clear-session', [SessionController::class, 'clearSession'])->name('clear.session');

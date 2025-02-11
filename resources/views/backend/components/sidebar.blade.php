@@ -32,7 +32,7 @@
                     <span>Program</span></a>
             </li>
             <li class="{{ Request::is('fasilitas*') ? 'active' : '' }}">
-                <a class="nav-link" href="#"><i class="fas fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('fasilitas.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Fasilitas</span></a>
             </li>
             <li class="{{ Request::is('prestasi*') ? 'active' : '' }}">
