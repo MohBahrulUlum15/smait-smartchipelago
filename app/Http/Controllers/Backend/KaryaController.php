@@ -92,11 +92,11 @@ class KaryaController extends Controller
 
         // check if request has gambar_karya
         if ($request->hasFile('gambar_karya')) {
-            // get gambar_karya from request
+            $oldImagePath = str_replace('/storage', '', $karya->gambar_karya);
+            Storage::disk('public')->delete($oldImagePath);
+
             $gambar_karya = $request->file('gambar_karya');
-            // generate gambar_karya name
             $gambar_karyaName = $this->generateImageName($request->judul_karya, $gambar_karya->getClientOriginalExtension());
-            // save gambar_karya to storage
             $gambar_karyaPath = $this->saveImageToStorage($gambar_karya, $gambar_karyaName);
         } else {
             // if request has no gambar_karya, use the old gambar_karya

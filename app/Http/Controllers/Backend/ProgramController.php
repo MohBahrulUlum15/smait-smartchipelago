@@ -138,7 +138,7 @@ class ProgramController extends Controller
 
     private function saveImageToStorage($image, $imageName)
     {
-        $path = 'uploads/program-unggulan/' . $imageName;
+        $path = 'uploads/program/' . $imageName;
 
         // Store the image
         Storage::disk('public')->put($path, file_get_contents($image));

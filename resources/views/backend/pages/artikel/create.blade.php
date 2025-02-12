@@ -44,9 +44,10 @@
                                         <div class="col-sm-12 col-md-7">
                                             <div id="image-preview" class="image-preview">
                                                 <label for="image-upload" id="image-label">Choose File</label>
-                                                <input type="file" name="foto" id="image-upload" class="form-control"
-                                                    accept="image/jpg, image/png, image/jpeg" required />
-                                                @error('foto')
+                                                <input type="file" name="gambar_artikel" id="image-upload"
+                                                    class="form-control" accept="image/jpg, image/png, image/jpeg"
+                                                    required />
+                                                @error('gambar_artikel')
                                                     <strong class="fw-bold d-block text-danger mt-2">
                                                         <small>&nbsp;* {{ $message }}</small>
                                                     </strong>
@@ -55,12 +56,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group row mb-3">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul
                                             Artikel</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <input type="text" class="form-control" name="nama_artikel"
-                                                value="{{ old('nama_artikel') }}" required>
-                                            @error('nama_artikel')
+                                            <input type="text" class="form-control" name="judul_artikel"
+                                                value="{{ old('judul_artikel') }}" required>
+                                            @error('judul_artikel')
                                                 <strong class="fw-bold d-block text-danger mt-2">
                                                     <small>&nbsp;* {{ $message }}</small>
                                                 </strong>
@@ -69,15 +70,15 @@
                                     </div>
 
                                     <div class="form-group row mb-0">
-                                        <label
-                                            class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Isi
+                                            Konten</label>
                                         <div class="col-sm-12 col-md-7">
-                                            @error('deskripsi')
+                                            @error('isi_artikel')
                                                 <strong class="fw-bold d-block text-danger mt-2">
                                                     <small>&nbsp;* {{ $message }}</small>
                                                 </strong>
                                             @enderror
-                                            <textarea class="summernote-simple form-control" name="deskripsi" required>{{ old('deskripsi') }}</textarea>
+                                            <textarea class="summernote-simple form-control" name="isi_artikel" required>{{ old('isi_artikel') }}</textarea>
                                         </div>
                                     </div>
 

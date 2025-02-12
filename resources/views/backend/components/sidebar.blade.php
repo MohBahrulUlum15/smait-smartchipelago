@@ -37,15 +37,15 @@
                     <span>Fasilitas</span></a>
             </li>
             <li class="{{ Request::is('prestasi*') ? 'active' : '' }}">
-                <a class="nav-link" href="#"><i class="fas fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('prestasi.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Prestasi</span></a>
             </li>
             <li class="{{ Request::is('karya*') ? 'active' : '' }}">
-                <a class="nav-link" href="#"><i class="fas fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('karya.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Karya</span></a>
             </li>
             <li class="{{ Request::is('kegiatan*') ? 'active' : '' }}">
-                <a class="nav-link" href="#"><i class="fas fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('kegiatan.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Kegiatan</span></a>
             </li>
             <li class="{{ Request::is('berita*') ? 'active' : '' }}">
@@ -53,7 +53,7 @@
                     <span>Berita</span></a>
             </li>
             <li class="{{ Request::is('artikel*') ? 'active' : '' }}">
-                <a class="nav-link" href="#"><i class="fas fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('artikel.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Artikel</span></a>
             </li>
             {{-- <li class="menu-header">Starter</li>

@@ -92,11 +92,12 @@ class KegiatanController extends Controller
 
         // check if request has gambar_kegiatan
         if ($request->hasFile('gambar_kegiatan')) {
-            // get gambar_kegiatan from request
+
+            $oldImagePath = str_replace('/storage', '', $kegiatan->gambar_kegiatan);
+            Storage::disk('public')->delete($oldImagePath);
+
             $gambar_kegiatan = $request->file('gambar_kegiatan');
-            // generate gambar_kegiatan name
             $gambar_kegiatanName = $this->generateImageName($request->nama_kegiatan, $gambar_kegiatan->getClientOriginalExtension());
-            // save gambar_kegiatan to storage
             $gambar_kegiatanPath = $this->saveImageToStorage($gambar_kegiatan, $gambar_kegiatanName);
         } else {
             // if request has no gambar_kegiatan, use the old gambar_kegiatan

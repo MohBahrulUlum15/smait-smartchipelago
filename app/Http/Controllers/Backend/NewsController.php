@@ -73,7 +73,7 @@ class NewsController extends Controller
             'supporting_images' => json_encode($supportingImagesPaths),
         ]);
 
-        return redirect()->route('news-backend.index')->with('success', 'News created successfully.');
+        return redirect()->route('berita.index')->with('success', 'News created successfully.');
     }
 
     /**
@@ -116,7 +116,7 @@ class NewsController extends Controller
         // Update gambar utama (jika ada)
         if ($request->hasFile('featured_image')) {
             // Hapus gambar lama
-            Storage::disk('public')->delete('uploads/news_images/' . basename($news->featured_image));
+            Storage::disk('public')->delete('uploads/berita/' . basename($news->featured_image));
 
             // Simpan gambar baru
             $featuredImage = $request->file('featured_image');
@@ -153,7 +153,7 @@ class NewsController extends Controller
             'supporting_images' => json_encode($supportingImagesPaths),
         ]);
 
-        return redirect()->route('news-backend.index')->with('success', 'News updated successfully.');
+        return redirect()->route('berita.index')->with('success', 'News updated successfully.');
     }
 
     /**
@@ -167,7 +167,7 @@ class NewsController extends Controller
             'on_delete' => true,
         ]);
 
-        return redirect()->route('news-backend.index')->with('success', 'News deleted successfully.');
+        return redirect()->route('berita.index')->with('success', 'News deleted successfully.');
     }
 
     private function generateImageName($title, $extension)
@@ -177,7 +177,7 @@ class NewsController extends Controller
 
     private function saveImageToStorage($image, $imageName)
     {
-        $path = 'uploads/news_images/' . $imageName;
+        $path = 'uploads/berita/' . $imageName;
 
         // Store the image
         Storage::disk('public')->put($path, file_get_contents($image));

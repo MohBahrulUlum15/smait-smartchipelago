@@ -92,11 +92,12 @@ class PrestasiController extends Controller
 
         // check if request has gambar_prestasi
         if ($request->hasFile('gambar_prestasi')) {
+
+            $oldImagePath = str_replace('/storage', '', $prestasi->gambar_prestasi);
+            Storage::disk('public')->delete($oldImagePath);
             // get gambar_prestasi from request
             $gambar_prestasi = $request->file('gambar_prestasi');
-            // generate gambar_prestasi name
             $gambar_prestasiName = $this->generateImageName($request->judul_prestasi, $gambar_prestasi->getClientOriginalExtension());
-            // save gambar_prestasi to storage
             $gambar_prestasiPath = $this->saveImageToStorage($gambar_prestasi, $gambar_prestasiName);
         } else {
             // if request has no gambar_prestasi, use the old gambar_prestasi

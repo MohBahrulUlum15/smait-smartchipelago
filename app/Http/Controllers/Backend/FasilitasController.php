@@ -92,11 +92,12 @@ class FasilitasController extends Controller
 
         // check if request has foto
         if ($request->hasFile('foto')) {
-            // get foto from request
+
+            $oldImagePath = str_replace('/storage', '', $fasilitas->foto);
+            Storage::disk('public')->delete($oldImagePath);
+
             $foto = $request->file('foto');
-            // generate foto name
             $fotoName = $this->generateImageName($request->nama_fasilitas, $foto->getClientOriginalExtension());
-            // save foto to storage
             $fotoPath = $this->saveImageToStorage($foto, $fotoName);
         } else {
             // if request has no foto, use the old foto

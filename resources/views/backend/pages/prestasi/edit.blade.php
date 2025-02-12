@@ -57,11 +57,12 @@
                                         </label>
                                         <div class="col-sm-12 col-md-7">
                                             <div id="image-preview" class="image-preview"
-                                                style="background-image: url('{{ $data->foto ? asset($data->foto) : '' }}');">
+                                                style="background-image: url('{{ $data->gambar_prestasi ? asset($data->gambar_prestasi) : '' }}');">
                                                 <label for="image-upload" id="image-label">Choose File</label>
-                                                <input type="file" name="foto" id="image-upload" class="form-control"
-                                                    accept="image/jpg, image/png, image/jpeg" value="{{ $data->foto }}" />
-                                                @error('foto')
+                                                <input type="file" name="gambar_prestasi" id="image-upload"
+                                                    class="form-control" accept="image/jpg, image/png, image/jpeg"
+                                                    value="{{ $data->gambar_prestasi }}" />
+                                                @error('gambar_prestasi')
                                                     <strong class="fw-bold d-block text-danger mt-2">
                                                         <small>&nbsp;* {{ $message }}</small>
                                                     </strong>
@@ -73,9 +74,9 @@
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama
                                             Prestasi</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <input type="text" class="form-control" name="nama_prestasi"
-                                                value="{{ $data->nama_prestasi ?? old('nama_prestasi') }}" required>
-                                            @error('nama_prestasi')
+                                            <input type="text" class="form-control" name="judul_prestasi"
+                                                value="{{ $data->judul_prestasi ?? old('judul_prestasi') }}" required>
+                                            @error('judul_prestasi')
                                                 <strong class="fw-bold d-block text-danger mt-2">
                                                     <small>&nbsp;* {{ $message }}</small>
                                                 </strong>
@@ -87,12 +88,12 @@
                                         <label
                                             class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
                                         <div class="col-sm-12 col-md-7">
-                                            @error('deskripsi')
+                                            @error('deskripsi_prestasi')
                                                 <strong class="fw-bold d-block text-danger mt-2">
                                                     <small>&nbsp;* {{ $message }}</small>
                                                 </strong>
                                             @enderror
-                                            <textarea class="summernote-simple form-control" name="deskripsi" required>{{ $data->deskripsi ?? old('deskripsi') }}</textarea>
+                                            <textarea class="summernote-simple form-control" name="deskripsi_prestasi" required>{{ $data->deskripsi_prestasi ?? old('deskripsi_prestasi') }}</textarea>
                                         </div>
                                     </div>
 

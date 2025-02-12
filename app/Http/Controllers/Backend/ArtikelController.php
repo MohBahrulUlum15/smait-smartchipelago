@@ -41,7 +41,7 @@ class ArtikelController extends Controller
         // validate request
         $request->validate([
             'judul_artikel' => 'required|string|max:255',
-            'deskripsi_artikel' => 'required|string',
+            'isi_artikel' => 'required|string',
             'gambar_artikel' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -55,7 +55,7 @@ class ArtikelController extends Controller
         // create new artikel
         Artikel::create([
             'judul_artikel' => $request->judul_artikel,
-            'deskripsi_artikel' => $request->deskripsi_artikel,
+            'isi_artikel' => $request->isi_artikel,
             'gambar_artikel' => $gambar_artikelPath,
             'on_delete' => false,
         ]);
@@ -83,7 +83,7 @@ class ArtikelController extends Controller
         // validate request
         $request->validate([
             'judul_artikel' => 'required|string|max:255',
-            'deskripsi_artikel' => 'required|string',
+            'isi_artikel' => 'required|string',
             'gambar_artikel' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -92,11 +92,11 @@ class ArtikelController extends Controller
 
         // check if request has gambar_artikel
         if ($request->hasFile('gambar_artikel')) {
-            // get gambar_artikel from request
+            $oldImagePath = str_replace('/storage', '', $artikel->gambar_artikel);
+            Storage::disk('public')->delete($oldImagePath);
+
             $gambar_artikel = $request->file('gambar_artikel');
-            // generate gambar_artikel name
             $gambar_artikelName = $this->generateImageName($request->judul_artikel, $gambar_artikel->getClientOriginalExtension());
-            // save gambar_artikel to storage
             $gambar_artikelPath = $this->saveImageToStorage($gambar_artikel, $gambar_artikelName);
         } else {
             // if request has no gambar_artikel, use the old gambar_artikel
@@ -106,7 +106,7 @@ class ArtikelController extends Controller
         // update artikel
         $artikel->update([
             'judul_artikel' => $request->judul_artikel,
-            'deskripsi_artikel' => $request->deskripsi_artikel,
+            'isi_artikel' => $request->isi_artikel,
             'gambar_artikel' => $gambar_artikelPath,
         ]);
 

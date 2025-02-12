@@ -43,7 +43,7 @@
                                                 <th scope="row" class="text-center">
                                                     #
                                                 </th>
-                                                <th>Nama</th>
+                                                <th>Nama Prestasi</th>
                                                 <th class="text-center">Gambar</th>
                                                 <th class="text-center">Action</th>
                                             </tr>
@@ -53,13 +53,13 @@
                                                 <tr class="align-middle">
                                                     <th class="text-center align-middle">
                                                         {{ $loop->iteration }}</th>
-                                                    <td class="align-middle">{{ $item->nama_prestasi }}</td>
+                                                    <td class="align-middle">{{ $item->judul_prestasi }}</td>
                                                     <td class="align-middle text-center">
-                                                        @if ($item->foto)
+                                                        @if ($item->gambar_prestasi)
                                                             <div class="d-flex justify-content-center">
                                                                 <div style="width: 80px; height: 60px; overflow: hidden;">
-                                                                    <img src="{{ asset($item->foto) }}" alt="image"
-                                                                        class="img-fluid"
+                                                                    <img src="{{ asset($item->gambar_prestasi) }}"
+                                                                        alt="image" class="img-fluid"
                                                                         style="height: 100%; object-fit: contain;">
                                                                 </div>
                                                             </div>

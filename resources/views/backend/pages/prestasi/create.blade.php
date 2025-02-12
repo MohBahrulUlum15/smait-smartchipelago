@@ -44,9 +44,10 @@
                                         <div class="col-sm-12 col-md-7">
                                             <div id="image-preview" class="image-preview">
                                                 <label for="image-upload" id="image-label">Choose File</label>
-                                                <input type="file" name="foto" id="image-upload" class="form-control"
-                                                    accept="image/jpg, image/png, image/jpeg" required />
-                                                @error('foto')
+                                                <input type="file" name="gambar_prestasi" id="image-upload"
+                                                    class="form-control" accept="image/jpg, image/png, image/jpeg"
+                                                    required />
+                                                @error('gambar_prestasi')
                                                     <strong class="fw-bold d-block text-danger mt-2">
                                                         <small>&nbsp;* {{ $message }}</small>
                                                     </strong>
@@ -58,9 +59,9 @@
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama
                                             Prestasi</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <input type="text" class="form-control" name="nama_prestasi"
-                                                value="{{ old('nama_prestasi') }}" required>
-                                            @error('nama_prestasi')
+                                            <input type="text" class="form-control" name="judul_prestasi"
+                                                value="{{ old('judul_prestasi') }}" required>
+                                            @error('judul_prestasi')
                                                 <strong class="fw-bold d-block text-danger mt-2">
                                                     <small>&nbsp;* {{ $message }}</small>
                                                 </strong>
@@ -72,12 +73,12 @@
                                         <label
                                             class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
                                         <div class="col-sm-12 col-md-7">
-                                            @error('deskripsi')
+                                            @error('deskripsi_prestasi')
                                                 <strong class="fw-bold d-block text-danger mt-2">
                                                     <small>&nbsp;* {{ $message }}</small>
                                                 </strong>
                                             @enderror
-                                            <textarea class="summernote-simple form-control" name="deskripsi" required>{{ old('deskripsi') }}</textarea>
+                                            <textarea class="summernote-simple form-control" name="deskripsi_prestasi" required>{{ old('deskripsi_prestasi') }}</textarea>
                                         </div>
                                     </div>
 
