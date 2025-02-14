@@ -354,7 +354,8 @@
         </div> --}}
 
         <div class="hide-sidebar-mini mt-2 mb-2 p-3">
-            <a href="{{ route('home') }}" target="_blank" class="btn btn-primary btn-lg btn-block btn-icon-split">
+            <a href="{{ route('beranda.index') }}" target="_blank"
+                class="btn btn-primary btn-lg btn-block btn-icon-split">
                 <i class="fas fa-rocket"></i> Lihat Website
             </a>
         </div>

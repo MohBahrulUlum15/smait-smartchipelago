@@ -13,13 +13,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbars-host">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#">Beranda</a></li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item {{ request()->routeIs('beranda.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('beranda.index') }}">Beranda</a>
+                    </li>
+                    <li
+                        class="nav-item dropdown {{ request()->routeIs('frontend-visi-misi.index') || request()->routeIs('frontend-pengajar.index') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Profil
-                        </a>
+                            Sekolah</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="">Visi & Misi</a>
-                            <a class="dropdown-item" href="">Profil Pengajar</a>
+                            <a class="dropdown-item {{ request()->routeIs('frontend-visi-misi.index') ? 'active' : '' }}"
+                                href="{{ route('frontend-visi-misi.index') }}">Visi & Misi</a>
+                            <a class="dropdown-item {{ request()->routeIs('frontend-pengajar.index') ? 'active' : '' }}"
+                                href="{{ route('frontend-pengajar.index') }}">Pengajar</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#">Program Unggulan</a></li>

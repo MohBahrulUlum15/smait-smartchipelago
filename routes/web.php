@@ -14,6 +14,8 @@ use App\Http\Controllers\Backend\SambutanController;
 use App\Http\Controllers\Backend\SessionController;
 use App\Http\Controllers\Backend\VisiMisiController;
 use App\Http\Controllers\Frontend\BerandaController;
+use App\Http\Controllers\Frontend\PengajarController as FrontendPengajarController;
+use App\Http\Controllers\Frontend\VisiMisiController as FrontendVisiMisiController;
 use App\Http\Controllers\Global\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +24,9 @@ Route::get('/', function () {
 });
 
 // Landing Page Route
-Route::get('/website/beranda', [BerandaController::class, 'index'])->name('beranda.index');
+Route::get('/website/', [BerandaController::class, 'index'])->name('beranda.index');
+Route::get('/website/visi-misi', [FrontendVisiMisiController::class, 'index'])->name('frontend-visi-misi.index');
+Route::get('/website/pengajar', [FrontendPengajarController::class, 'index'])->name('frontend-pengajar.index');
 
 
 // Admin / Backend Route
