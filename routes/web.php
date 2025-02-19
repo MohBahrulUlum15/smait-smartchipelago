@@ -4,7 +4,6 @@ use App\Http\Controllers\Backend\ArtikelController;
 use App\Http\Controllers\Backend\DashboardController as BackendDashboardController;
 use App\Http\Controllers\Backend\FasilitasController;
 use App\Http\Controllers\Backend\KaryaController;
-use App\Http\Controllers\Backend\KegiatanController;
 use App\Http\Controllers\Backend\MottoTujuanController;
 use App\Http\Controllers\Backend\NewsController as BackendNewsController;
 use App\Http\Controllers\Backend\PengajarController;
@@ -14,8 +13,14 @@ use App\Http\Controllers\Backend\SambutanController;
 use App\Http\Controllers\Backend\SessionController;
 use App\Http\Controllers\Backend\VisiMisiController;
 use App\Http\Controllers\Frontend\BerandaController;
+use App\Http\Controllers\Frontend\ArtikelController as FrontendArtikelController;
+use App\Http\Controllers\Frontend\BeritaController as FrontendBeritaController;
+use App\Http\Controllers\Frontend\FasilitasController as FrontendFasilitasController;
+use App\Http\Controllers\Frontend\KegiatanController as FrontendKegiatanController;
 use App\Http\Controllers\Frontend\PengajarController as FrontendPengajarController;
+use App\Http\Controllers\Frontend\PrestasiController as FrontendPrestasiController;
 use App\Http\Controllers\Frontend\VisiMisiController as FrontendVisiMisiController;
+use App\Http\Controllers\Frontend\ProgramUnggulanController as FrontendProgramUnggulanController;
 use App\Http\Controllers\Global\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +32,12 @@ Route::get('/', function () {
 Route::get('/website/', [BerandaController::class, 'index'])->name('beranda.index');
 Route::get('/website/visi-misi', [FrontendVisiMisiController::class, 'index'])->name('frontend-visi-misi.index');
 Route::get('/website/pengajar', [FrontendPengajarController::class, 'index'])->name('frontend-pengajar.index');
-
+Route::get('/website/program-unggulan', [FrontendProgramUnggulanController::class, 'index'])->name('frontend-program-unggulan.index');
+Route::get('/website/fasilitas', [FrontendFasilitasController::class, 'index'])->name('frontend-fasilitas.index');
+Route::get('/website/prestasi', [FrontendPrestasiController::class, 'index'])->name('frontend-prestasi.index');
+Route::get('/website/berita', [FrontendBeritaController::class, 'index'])->name('frontend-berita.index');
+Route::get('/website/kegiatan', [FrontendKegiatanController::class, 'index'])->name('frontend-kegiatan.index');
+Route::get('/website/artikel', [FrontendArtikelController::class, 'index'])->name('frontend-artikel.index');
 
 // Admin / Backend Route
 // Dashboard Backend

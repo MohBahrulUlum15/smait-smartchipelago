@@ -27,17 +27,24 @@
                                 href="{{ route('frontend-pengajar.index') }}">Pengajar</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Program Unggulan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Fasilitas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Prestasi</a></li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item {{ request()->routeIs('frontend-program-unggulan.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('frontend-program-unggulan.index') }}">Program Unggulan</a>
+                    </li>
+                    <li class="nav-item {{ request()->routeIs('frontend-fasilitas.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('frontend-fasilitas.index') }}">Fasilitas</a>
+                    </li>
+                    <li class="nav-item {{ request()->routeIs('frontend-prestasi.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('frontend-prestasi.index') }}">Prestasi</a>
+                    </li>
+                    <li
+                        class="nav-item dropdown {{ Route::is('frontend-berita*', 'frontend-artikel*', 'frontend-kegiatan*') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Berita
                             & Kegiatan
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="">Berita</a>
-                            <a class="dropdown-item" href="">Kegiatan</a>
-                            <a class="dropdown-item" href="">Artikel</a>
+                            <a class="dropdown-item" href="{{ route('frontend-berita.index') }}">Berita</a>
+                            <a class="dropdown-item" href="{{ route('frontend-kegiatan.index') }}">Kegiatan</a>
+                            <a class="dropdown-item" href="{{ route('frontend-artikel.index') }}">Artikel</a>
                         </div>
                     </li>
                 </ul>
