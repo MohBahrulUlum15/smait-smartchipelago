@@ -43,6 +43,14 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="inner-hmv">
+                        <div class="icon-box-hmv"><i class="flaticon-eye"></i></div>
+                        <h3>Visi</h3>
+                        <div class="tr-pa">V</div>
+                        <p>{{ $visi->deskripsi }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="inner-hmv">
                         <div class="icon-box-hmv"><i class="flaticon-achievement"></i></div>
                         <h3>Misi</h3>
                         <div class="tr-pa">M</div>
@@ -59,14 +67,6 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="inner-hmv">
-                        <div class="icon-box-hmv"><i class="flaticon-eye"></i></div>
-                        <h3>Visi</h3>
-                        <div class="tr-pa">V</div>
-                        <p>{{ $visi->deskripsi }}</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="inner-hmv">
                         <div class="icon-box-hmv"><i class="flaticon-history"></i></div>
                         <h3>Tujuan</h3>
                         <div class="tr-pa">H</div>
@@ -74,7 +74,7 @@
                             <p>Data tujuan belum tersedia.</p>
                         @else
                             <ol>
-                                @foreach ($misi as $item)
+                                @foreach ($tujuan as $item)
                                     <li>{{ $item->deskripsi }}</li>
                                 @endforeach
                             </ol>

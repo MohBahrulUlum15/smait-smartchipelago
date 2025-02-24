@@ -12,6 +12,10 @@
                     <span>Dashboard</span></a>
             </li>
             <li class="menu-header">Manajemen Konten Landing Page</li>
+            <li class="{{ Request::is('beranda*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('beranda.index') }}"><i class="fas fa-home"></i>
+                    <span>Beranda</span></a>
+            </li>
             <li class="{{ Request::is('visi-misi*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('visi-misi.index') }}"><i class="fas fa-handshake"></i>
                     <span>Visi & Misi</span></a>
@@ -40,10 +44,10 @@
                 <a class="nav-link" href="{{ route('prestasi.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Prestasi</span></a>
             </li>
-            <li class="{{ Request::is('karya*') ? 'active' : '' }}">
+            {{-- <li class="{{ Request::is('karya*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('karya.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Karya</span></a>
-            </li>
+            </li> --}}
             <li class="{{ Request::is('kegiatan*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('kegiatan.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Kegiatan</span></a>

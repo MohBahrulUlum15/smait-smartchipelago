@@ -28,25 +28,19 @@
             <div class="row">
                 @forelse ($programs as $item)
                     <div class="col-lg-6 col-md-6 col-12 mb-4">
-                        <div class="course-item">
+                        <div class="blog-item">
                             <div class="image-blog">
                                 <img src="{{ $item->foto ?? asset('assets/frontend/images/blog_1.jpg') }}" alt=""
                                     class="img-fluid">
                             </div>
-                            <div class="course-br">
-                                <div class="course-title">
-                                    <h2><a href="#" title="">{{ $item->nama_program }}</a></h2>
-                                </div>
-                                <div class="course-desc">
-                                    <p>{!! $item->deskripsi !!}</p>
-                                </div>
+                            <div class="blog-title text-center">
+                                <h2><a href="#" title="">{{ $item->nama_program }}</a></h2>
                             </div>
-                            {{-- <div class="course-meta-bot">
-                                <ul>
-                                    <li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
-                                    <li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
-                                    <li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-                                </ul>
+                            {{-- <div class="blog-desc">
+                                <p>{!! $item->deskripsi !!}</p>
+                            </div> --}}
+                            {{-- <div class="blog-button">
+                                <a class="hover-btn-new orange" href="#"><span>Read More<span></a>
                             </div> --}}
                         </div>
                     </div><!-- end col -->

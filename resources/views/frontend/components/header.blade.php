@@ -13,8 +13,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbars-host">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item {{ request()->routeIs('beranda.index') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('beranda.index') }}">Beranda</a>
+                    <li class="nav-item {{ request()->routeIs('frontend-beranda.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('frontend-beranda.index') }}">Beranda</a>
                     </li>
                     <li
                         class="nav-item dropdown {{ request()->routeIs('frontend-visi-misi.index') || request()->routeIs('frontend-pengajar.index') ? 'active' : '' }}">

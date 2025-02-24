@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', $pageTitle ?? 'Berita')
+@section('title', $pageTitle ?? 'Sambutan')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -86,8 +86,7 @@
                                                     File</label>
                                                 <input type="file" name="foto_kepala_sekolah" id="image-upload"
                                                     class="image-input form-control"
-                                                    accept="image/jpg, image/png, image/jpeg"
-                                                    value="{{ $sambutan->foto_kepala_sekolah }}" />
+                                                    accept="image/jpg, image/png, image/jpeg" />
                                                 @error('foto_kepala_sekolah')
                                                     <strong class="fw-bold d-block text-danger mt-2">
                                                         <small>&nbsp;* {{ $message }}</small>
@@ -96,6 +95,11 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- Input hidden untuk menyimpan foto lama -->
+                                    <input type="hidden" name="old_foto_kepala_sekolah"
+                                        value="{{ $sambutan->foto_kepala_sekolah }}">
+
                                     <div class="form-group row mb-3">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama
                                             Kepala</label>

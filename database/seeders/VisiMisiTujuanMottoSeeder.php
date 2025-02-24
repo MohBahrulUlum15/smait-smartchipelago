@@ -15,41 +15,61 @@ class VisiMisiTujuanMottoSeeder extends Seeder
         collect([
             // Visi & Misi
             [
-                'deskripsi' => 'Menjadi perguruan tinggi yang unggul dalam bidang teknologi informasi dan komunikasi yang berbasis kearifan lokal dan berwawasan global.',
+                'deskripsi' => 'Membentuk pelajar muslim yang berkarakter mulia, berjiwa kepemimpinan dan berwawasan global.',
                 'tipe' => 'visi'
             ],
             [
-                'deskripsi' => 'Menyelenggarakan pendidikan tinggi dalam bidang teknologi informasi dan komunikasi yang berbasis kearifan lokal dan berwawasan global.',
+                'deskripsi' => 'Membina dan mendidik pelajar muslim yang berkarakter holistik.',
                 'tipe' => 'misi'
             ],
             [
-                'deskripsi' => 'Menyelenggarakan penelitian dan pengabdian kepada masyarakat dalam bidang teknologi informasi dan komunikasi yang berbasis kearifan lokal dan berwawasan global.',
+                'deskripsi' => 'Menumbuhkan nilai-nilai kepemimpinan dalam proses pendidikan.',
                 'tipe' => 'misi'
             ],
             [
-                'deskripsi' => 'Menyelenggarakan kerjasama dengan berbagai pihak dalam bidang teknologi informasi dan komunikasi yang berbasis kearifan lokal dan berwawasan global.',
+                'deskripsi' => 'Mengembangkan nilai enterpreneurship dalam proses pendidikan.',
+                'tipe' => 'misi'
+            ],
+            [
+                'deskripsi' => 'Membina peserta didik unggul dalam prestasi akademik dan non-akademik bertaraf regional, nasional dan internasional.',
+                'tipe' => 'misi'
+            ],
+            [
+                'deskripsi' => 'Menyiapkan peserta didik untuk memiliki pengetahuan, sikap dan keterampilan agar siap memasuki jenjang pendidikan selanjutnya serta mampu berkontribusi bagi masyarakat.',
+                'tipe' => 'misi',
+            ],
+            [
+                'deskripsi' => 'Menciptakan lingkungan pendidikan yang islami dan dinamis.',
                 'tipe' => 'misi'
             ],
 
             // Motto & Tujuan
             [
-                'deskripsi' => '“Membangun Karakter, Menciptakan Karya”',
+                'deskripsi' => '“Sekolah Impian Calon Pemimpin Masa Depan Berkarakter dan Berbudaya”',
                 'tipe' => 'motto'
             ],
             [
-                'deskripsi' => 'Menghasilkan lulusan yang memiliki kompetensi dan keterampilan di bidang teknologi informasi dan komunikasi yang berbasis kearifan lokal dan berwawasan global.',
+                'deskripsi' => 'Tujuan 1',
                 'tipe' => 'tujuan'
             ],
             [
-                'deskripsi' => 'Menghasilkan penelitian yang bermutu di bidang teknologi informasi dan komunikasi yang berbasis kearifan lokal dan berwawasan global.',
+                'deskripsi' => 'Tujuan 2',
                 'tipe' => 'tujuan'
             ],
             [
-                'deskripsi' => 'Menghasilkan pengabdian kepada masyarakat yang bermanfaat di bidang teknologi informasi dan komunikasi yang berbasis kearifan lokal dan berwawasan global.',
+                'deskripsi' => 'Tujuan 3',
                 'tipe' => 'tujuan'
             ],
             [
-                'deskripsi' => 'Menghasilkan kerjasama yang bermanfaat dengan berbagai pihak di bidang teknologi informasi dan komunikasi yang berbasis kearifan lokal dan berwawasan global.',
+                'deskripsi' => 'Tujuan 4',
+                'tipe' => 'tujuan'
+            ],
+            [
+                'deskripsi' => 'Tujuan 5',
+                'tipe' => 'tujuan'
+            ],
+            [
+                'deskripsi' => 'Tujuan 6',
                 'tipe' => 'tujuan'
             ],
         ])->each(fn($data) => \App\Models\VisiMisiTujuanMotto::create($data));

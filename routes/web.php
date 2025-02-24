@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Backend\ArtikelController;
+use App\Http\Controllers\Backend\BerandaController as BackendBerandaController;
 use App\Http\Controllers\Backend\DashboardController as BackendDashboardController;
 use App\Http\Controllers\Backend\FasilitasController;
 use App\Http\Controllers\Backend\KaryaController;
+use App\Http\Controllers\Backend\KegiatanController;
 use App\Http\Controllers\Backend\MottoTujuanController;
 use App\Http\Controllers\Backend\NewsController as BackendNewsController;
 use App\Http\Controllers\Backend\PengajarController;
@@ -29,7 +31,7 @@ Route::get('/', function () {
 });
 
 // Landing Page Route
-Route::get('/website/', [BerandaController::class, 'index'])->name('beranda.index');
+Route::get('/website/', [BerandaController::class, 'index'])->name('frontend-beranda.index');
 Route::get('/website/visi-misi', [FrontendVisiMisiController::class, 'index'])->name('frontend-visi-misi.index');
 Route::get('/website/pengajar', [FrontendPengajarController::class, 'index'])->name('frontend-pengajar.index');
 Route::get('/website/program-unggulan', [FrontendProgramUnggulanController::class, 'index'])->name('frontend-program-unggulan.index');
@@ -42,6 +44,9 @@ Route::get('/website/artikel', [FrontendArtikelController::class, 'index'])->nam
 // Admin / Backend Route
 // Dashboard Backend
 Route::get('/dashboard-backend', [BackendDashboardController::class, 'index'])->name('dashboard-backend.index');
+
+Route::get('/beranda', [BackendBerandaController::class, 'index'])->name('beranda.index');
+Route::put('/beranda/{id}', [BackendBerandaController::class, 'update'])->name('beranda.update');
 
 // ----------------- VISI MISI ROUTE ----------------- //
 Route::get('/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi.index');

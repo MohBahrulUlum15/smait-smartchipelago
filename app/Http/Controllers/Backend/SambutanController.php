@@ -79,7 +79,7 @@ class SambutanController extends Controller
             $fotoKepalaSekolahPath = $this->saveImageToStorage($fotoKepalaSekolah, $fotoKepalaSekolahName);
             $sambutan->foto_kepala_sekolah = $fotoKepalaSekolahPath;
         } else {
-            $fotoKepalaSekolahPath = $request->foto_kepala_sekolah;
+            $fotoKepalaSekolahPath = $request->old_foto_kepala_sekolah;
         }
 
         $sambutan->update([
