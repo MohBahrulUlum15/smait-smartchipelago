@@ -10,44 +10,29 @@
     {{-- For content --}}
     <div class="all-title-box">
         <div class="container text-center">
-            <h1>SMA Islam Terpadu Al-Ghozali<span class="m_1">{{ $motto->deskripsi ?? 'Disini Tulisan Motto' }}</span>
+            <h1>Fasilitas Sekolah<span class="m_1">Fasilitas yang tersedia di sekolah kami mendukung kegiatan belajar
+                    mengajar dengan
+                    optimal, memberikan kenyamanan dan keamanan bagi siswa serta mendukung pengembangan potensi mereka
+                    secara maksimal.</span>
             </h1>
         </div>
     </div>
 
-    <div id="overviews" class="section wb">
+    <div id="overviews" class="section lb">
         <div class="container">
-            <div class="section-title row text-center">
-                <div class="col-md-8 offset-md-2">
-                    <p class="lead">Fasilitas SMAIT Al-Ghozali</p>
-                </div>
-            </div><!-- end title -->
-
-            <hr class="invis">
-
             <div class="row">
                 @forelse ($fasilitas as $item)
                     <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="course-item">
-                            <div class="image-blog">
-                                <img src="{{ $item->foto ?? asset('assets/frontend/images/blog_1.jpg') }}" alt=""
-                                    class="img-fluid">
-                            </div>
-                            <div class="course-br">
-                                <div class="course-title">
+                        <div class="pricing-table" style="border-radius: 6px;">
+                            <div class="blog-item" style="background-color: #f9f9f9; border-radius: 6px;">
+                                <div class="image-blog">
+                                    <img src="{{ $item->foto ?? asset('assets/frontend/images/blog_1.jpg') }}"
+                                        alt="" class="img-fluid">
+                                </div>
+                                <div class="blog-title text-center">
                                     <h2><a href="#" title="">{{ $item->nama_fasilitas }}</a></h2>
                                 </div>
-                                <div class="course-desc">
-                                    <p>{!! $item->deskripsi !!}</p>
-                                </div>
                             </div>
-                            {{-- <div class="course-meta-bot">
-                                <ul>
-                                    <li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
-                                    <li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
-                                    <li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-                                </ul>
-                            </div> --}}
                         </div>
                     </div><!-- end col -->
                 @empty
@@ -55,10 +40,10 @@
                         <div class="course-item">
                             <div class="course-br">
                                 <div class="course-title">
-                                    <h2><a href="#" title="">Program Unggulan</a></h2>
+                                    <h2><a href="#" title="">Fasilitas</a></h2>
                                 </div>
                                 <div class="course-desc">
-                                    <p>Belum ada data program unggulan.</p>
+                                    <p>Belum ada data fasilitas.</p>
                                 </div>
                             </div>
                         </div>

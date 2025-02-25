@@ -4,6 +4,81 @@
 
 @push('styles')
     {{-- For styles --}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    {{-- Swipper --}}
+    <!-- Tambahkan Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <!-- Tambahkan CSS untuk tata letak pagination & navigasi -->
+    <style>
+        .swiper-container-wrapper {
+            position: relative !important;
+            bottom: 0 !important;
+            padding-bottom: 10px;
+            /* Beri ruang untuk pagination */
+        }
+
+        .swiper-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swiper-footer {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .swiper-pagination {
+            position: relative !important;
+            bottom: 0 !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            /* margin-top: 20px; */
+        }
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: #ccc;
+            opacity: 1;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #007bff;
+            /* Warna aktif */
+        }
+
+        .swiper-pagination-bullet-dynamic {
+            transform: scale(0.8);
+            /* Ukuran bullet non-aktif */
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -29,11 +104,10 @@
                                 <div class="col-md-12 col-sm-12 text-right">
                                     <div class="big-tagline">
                                         <h2><strong>SMAIT </strong>Al-Ghozali</h2>
-                                        <p class="lead">With Landigoo responsive landing page template, you can promote
-                                            your all hosting, domain and email services. </p>
+                                        <p class="lead">{{ $visi->deskripsi ?? 'Teks Visi' }}</p>
                                         {{-- <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
-                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                        <a href="#" class="hover-btn-new"><span>Selengkapnya</span></a>
                                     </div>
                                 </div>
                             </div><!-- end row -->
@@ -51,12 +125,11 @@
                                     <div class="big-tagline">
                                         <h2 data-animation="animated zoomInRight">SMAIT <strong>Al-Ghozali</strong>
                                         </h2>
-                                        <p class="lead" data-animation="animated fadeInLeft">With Landigoo responsive
-                                            landing page template, you can promote your all hosting, domain and email
-                                            services. </p>
+                                        <p class="lead" data-animation="animated fadeInLeft">
+                                            {{ $motto->deskripsi ?? 'Teks Motto' }}</p>
                                         {{-- <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
-                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                        <a href="#" class="hover-btn-new"><span>Selengkapnya</span></a>
                                     </div>
                                 </div>
                             </div><!-- end row -->
@@ -73,13 +146,11 @@
                                 <div class="col-md-12 col-sm-12 text-center">
                                     <div class="big-tagline">
                                         <h2 data-animation="animated zoomInRight"><strong>SMAIT</strong> Al-Ghozali</h2>
-                                        <p class="lead" data-animation="animated fadeInLeft">1 IP included with each
-                                            server
-                                            Your Choice of any OS (CentOS, Windows, Debian, Fedora)
-                                            FREE Reboots</p>
+                                        <p class="lead" data-animation="animated fadeInLeft">Welcome to Islamic Leader
+                                            School, SMA IT Al-Ghozali Jember</p>
                                         {{-- <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
-                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                        <a href="#" class="hover-btn-new"><span>Selengkapnya</span></a>
                                     </div>
                                 </div>
                             </div><!-- end row -->
@@ -101,13 +172,14 @@
         </div>
     </div>
 
+    {{-- SAMBUTAN --}}
     <div id="overviews" class="section wb">
         <div class="container">
             <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
                     <h3>SMAIT Al-Ghozali Jember</h3>
-                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
-                        quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                    <hr>
+                    <p class="lead">{{ $motto->deskripsi ?? 'Teks Motto' }}</p>
                 </div>
             </div><!-- end title -->
             <div class="row d-flex align-items-stretch">
@@ -132,19 +204,305 @@
         </div><!-- end container -->
     </div><!-- end section -->
 
+    {{-- PROGRAM UNGGULAN --}}
     <div id="overviews" class="section lb">
         <div class="container">
             <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
+                    <h3>Program Unggulan</h3>
+                    <hr>
+                    <p class="lead">Program unggulan yang dibentuk untuk mencetak leader dengan kemampuan intelejensi yang
+                        tinggi, competitive skill,
+                        dan karakter islam yang kuat.</p>
+                </div>
+            </div><!-- end title -->
+
+            <hr class="invis">
+
+            <!-- Wrapper untuk slider dan navigasi -->
+            <div class="swiper-container-wrapper">
+                <!-- Swiper Carousel -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @forelse ($program as $item)
+                            <div class="swiper-slide">
+                                <div class="course-item" style="border-radius: 6px;">
+                                    <div class="course-br" style="border-radius: 6px;">
+                                        <div class="image-blog">
+                                            <img src="{{ $item->foto ?? asset('assets/frontend/images/blog_1.jpg') }}"
+                                                alt="" class="img-fluid">
+                                        </div>
+                                        <div class="course-title text-center">
+                                            <h2><a href="#" title="">{{ $item->nama_program ?? '' }}</a></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end swiper-slide -->
+                        @empty
+                            <div class="swiper-slide">
+                                <div class="course-item">
+                                    <div class="course-br">
+                                        <div class="course-title">
+                                            <h2><a href="#" title="">Program</a></h2>
+                                        </div>
+                                        <div class="course-desc">
+                                            <p>Belum ada data program.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end swiper-slide -->
+                        @endforelse
+                    </div>
+                </div>
+
+
+                <!-- Pagination di luar slider -->
+                <div class="swiper-footer">
+                    <div class="swiper-pagination program-pagination"></div>
+                </div>
+
+            </div>
+
+            <div class="row d-flex justify-content-center my-3">
+                <div class="blog-button">
+                    <a class="hover-btn-new orange" href="#"><span>Lihat Semua Program<span></a>
+                </div>
+            </div>
+
+        </div><!-- end container -->
+    </div>
+
+    {{-- FASILITAS --}}
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <h3>Fasilitas Sekolah</h3>
+                    <hr>
+                    <p class="lead">Fasilitas yang tersedia di sekolah kami mendukung kegiatan belajar mengajar dengan
+                        optimal, memberikan kenyamanan dan keamanan bagi siswa serta mendukung pengembangan potensi mereka
+                        secara maksimal.</p>
+                </div>
+            </div><!-- end title -->
+
+            <hr class="invis">
+
+            <!-- Wrapper untuk slider dan navigasi -->
+            <div class="swiper-container-wrapper">
+                <div class="swiper fasilitasSwiper">
+                    <div class="swiper-wrapper">
+                        @forelse ($fasilitas as $item)
+                            <div class="swiper-slide">
+                                <div class="blog-item" style="background-color: #f9f9f9; border-radius: 6px;">
+                                    <div class="image-blog">
+                                        <img src="{{ $item->foto ?? asset('assets/frontend/images/blog_1.jpg') }}"
+                                            alt="" class="img-fluid">
+                                    </div>
+                                    <div class="blog-title text-center">
+                                        <h2><a href="#" title="">{{ $item->nama_fasilitas }}</a></h2>
+                                    </div>
+                                </div>
+                            </div><!-- end swiper-slide -->
+                        @empty
+                            <div class="swiper-slide">
+                                <div class="course-item">
+                                    <div class="course-br">
+                                        <div class="course-title">
+                                            <h2><a href="#" title="">Berita</a></h2>
+                                        </div>
+                                        <div class="course-desc">
+                                            <p>Belum ada data fasilitas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforelse
+                    </div>
+                </div>
+                <!-- Pagination Swiper -->
+                <div class="swiper-footer">
+                    <div class="swiper-pagination fasilitas-pagination"></div>
+                </div>
+
+            </div>
+
+            <div class="row d-flex justify-content-center my-3">
+                <div class="blog-button">
+                    <a class="hover-btn-new orange" href="#"><span>Lihat Semua Fasilitas<span></a>
+                </div>
+            </div>
+
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    {{-- STATISKIK --}}
+    <div class="section cl">
+        <div class="container">
+            <div class="row text-left stat-wrap">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
+                        <i class="fas fa-user-tie"></i> <!-- Ikon dari Font Awesome -->
+                    </span>
+                    <p class="stat_count">55</p>
+                    <h3>Pengajar</h3>
+                </div><!-- end col -->
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
+                        <i class="fas fa-users"></i> <!-- Ikon dari Font Awesome -->
+                    </span>
+                    <p class="stat_count">12000</p>
+                    <h3>Siswa & Siswi</h3>
+                </div><!-- end col -->
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
+                        <i class="fas fa-user-graduate"></i> <!-- Ikon dari Font Awesome -->
+                    </span>
+                    <p class="stat_count">240</p>
+                    <h3>Lulusan</h3>
+                </div><!-- end col -->
+
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    {{-- BERITA TERBARU --}}
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
                     <h3>Berita Terbaru</h3>
+                    <hr>
                     {{-- <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
                         quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p> --}}
                 </div>
             </div><!-- end title -->
+
+            <hr class="invis">
+
+            <div class="row">
+                @forelse ($beritaTerbaru as $item)
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="blog-item">
+                            <div class="image-blog">
+                                <img src="{{ $item->featured_image ?? asset('assets/frontend/images/blog_1.jpg') }}"
+                                    alt="" class="img-fluid">
+                            </div>
+                            <div class="meta-info-blog">
+                                <span><i class="fa fa-calendar"></i> <a
+                                        href="#">{{ $item->created_at->format('d M Y') }}</a>
+                                </span>
+                                <span><i class="fa fa-tag"></i> <a href="#">{{ $item->type }}</a>
+                                </span>
+                                {{-- <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span> --}}
+                            </div>
+                            <div class="blog-title">
+                                <h2><a href="#" title="">{{ $item->title }}</a></h2>
+                            </div>
+                            <div class="blog-desc">
+                                <p>{!! $item->content !!}</p>
+                            </div>
+                            <div class="blog-button">
+                                <a class="hover-btn-new orange" href="#"><span>Baca Berita<span></a>
+                            </div>
+                        </div>
+                    </div><!-- end col -->
+                @empty
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="course-item">
+                            <div class="course-br">
+                                <div class="course-title">
+                                    <h2><a href="#" title="">Berita</a></h2>
+                                </div>
+                                <div class="course-desc">
+                                    <p>Belum ada data beritaTerbaru.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end col -->
+                @endforelse
+            </div>
+
+            <div class="row d-flex justify-content-center my-3">
+                <div class="blog-button">
+                    <a class="hover-btn-new orange" href="#"><span>Lihat Semua Berita<span></a>
+                </div>
+            </div>
         </div>
     </div><!-- end section -->
+
 @endsection
 
 @push('scripts')
     {{-- For scripts --}}
+
+    {{-- Swipper --}}
+    <!-- Tambahkan Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var fasilitasSwiper = new Swiper(".fasilitasSwiper", {
+                loop: true,
+                spaceBetween: 30,
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".fasilitas-pagination",
+                    clickable: true,
+                    // dynamicBullets: true,
+                    // dynamicMainBullets: 1,
+                },
+                navigation: {
+                    nextEl: ".fasilitasSwiper + .swiper-footer .swiper-button-next",
+                    prevEl: ".fasilitasSwiper + .swiper-footer .swiper-button-prev",
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1
+                    },
+                    768: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
+                    },
+                }
+            });
+
+            var programSwiper = new Swiper(".mySwiper", {
+                loop: true,
+                spaceBetween: 30,
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".program-pagination",
+                    clickable: true,
+                    // dynamicBullets: true,
+                    // dynamicMainBullets: 1,
+                },
+                navigation: {
+                    nextEl: ".mySwiper + .swiper-footer .swiper-button-next",
+                    prevEl: ".mySwiper + .swiper-footer .swiper-button-prev",
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1
+                    },
+                    768: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
+                    },
+                },
+            });
+        });
+    </script>
 @endpush

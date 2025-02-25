@@ -10,38 +10,37 @@
     {{-- For content --}}
     <div class="all-title-box">
         <div class="container text-center">
-            <h1>SMA Islam Terpadu Al-Ghozali<span class="m_1">{{ $motto->deskripsi ?? 'Disini Tulisan Motto' }}</span>
+            <h1>Program Unggulan<span class="m_1">Program unggulan yang dibentuk untuk mencetak leader dengan
+                    kemampuan intelejensi yang
+                    tinggi, competitive skill,
+                    dan karakter islam yang kuat.</span>
             </h1>
         </div>
     </div>
 
     <div id="overviews" class="section wb">
         <div class="container">
-            <div class="section-title row text-center">
+            {{-- <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
                     <p class="lead">Program Unggulan SMAIT Al-Ghozali</p>
                 </div>
             </div><!-- end title -->
 
-            <hr class="invis">
+            <hr class="invis"> --}}
 
             <div class="row">
                 @forelse ($programs as $item)
                     <div class="col-lg-6 col-md-6 col-12 mb-4">
-                        <div class="blog-item">
-                            <div class="image-blog">
-                                <img src="{{ $item->foto ?? asset('assets/frontend/images/blog_1.jpg') }}" alt=""
-                                    class="img-fluid">
+                        <div class="course-item" style="border-radius: 6px;">
+                            <div class="course-br" style="border-radius: 6px;">
+                                <div class="image-blog">
+                                    <img src="{{ $item->foto ?? asset('assets/frontend/images/blog_1.jpg') }}"
+                                        alt="" class="img-fluid">
+                                </div>
+                                <div class="course-title text-center">
+                                    <h2><a href="#" title="">{{ $item->nama_program ?? '' }}</a></h2>
+                                </div>
                             </div>
-                            <div class="blog-title text-center">
-                                <h2><a href="#" title="">{{ $item->nama_program }}</a></h2>
-                            </div>
-                            {{-- <div class="blog-desc">
-                                <p>{!! $item->deskripsi !!}</p>
-                            </div> --}}
-                            {{-- <div class="blog-button">
-                                <a class="hover-btn-new orange" href="#"><span>Read More<span></a>
-                            </div> --}}
                         </div>
                     </div><!-- end col -->
                 @empty

@@ -40,20 +40,26 @@
 
     <div class="hmv-box">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="inner-hmv">
-                        <div class="icon-box-hmv"><i class="flaticon-eye"></i></div>
-                        <h3>Visi</h3>
-                        <div class="tr-pa">V</div>
+            <div class="row mb-4">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="inner-hmv text-center">
+                        <div class="d-flex justify-content-center">
+                            <div class="icon-box-hmv"><i class="flaticon-eye"></i></div>
+                        </div>
+                        <h3>Visi Sekolah</h3>
+                        {{-- <div class="tr-pa">V</div> --}}
                         <p>{{ $visi->deskripsi }}</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="inner-hmv">
-                        <div class="icon-box-hmv"><i class="flaticon-achievement"></i></div>
-                        <h3>Misi</h3>
-                        <div class="tr-pa">M</div>
+                        <div class="d-flex justify-content-center">
+                            <div class="icon-box-hmv"><i class="flaticon-achievement"></i></div>
+                        </div>
+                        <h3 class="text-center">Misi Sekolah</h3>
+                        {{-- <div class="tr-pa">M</div> --}}
                         @if ($misi->isEmpty())
                             <p>Data misi belum tersedia.</p>
                         @else
@@ -65,11 +71,13 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="inner-hmv">
-                        <div class="icon-box-hmv"><i class="flaticon-history"></i></div>
-                        <h3>Tujuan</h3>
-                        <div class="tr-pa">H</div>
+                        <div class="d-flex justify-content-center">
+                            <div class="icon-box-hmv"><i class="flaticon-history"></i></div>
+                        </div>
+                        <h3 class="text-center">Tujuan Sekolah</h3>
+                        {{-- <div class="tr-pa">H</div> --}}
                         @if ($tujuan->isEmpty())
                             <p>Data tujuan belum tersedia.</p>
                         @else

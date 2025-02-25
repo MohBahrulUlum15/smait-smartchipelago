@@ -10,20 +10,21 @@
     {{-- For content --}}
     <div class="all-title-box">
         <div class="container text-center">
-            <h1>SMA Islam Terpadu Al-Ghozali<span class="m_1">{{ $motto->deskripsi ?? 'Disini Tulisan Motto' }}</span>
+            <h1>Semua Berita<span class="m_1">Temukan berita terbaru dan informasi terkini dari SMAIT Al-Ghozali di
+                    halaman ini.</span></h1>
             </h1>
         </div>
     </div>
 
     <div id="overviews" class="section wb">
         <div class="container">
-            <div class="section-title row text-center">
+            {{-- <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
                     <p class="lead">Berita SMAIT Al-Ghozali</p>
                 </div>
             </div><!-- end title -->
 
-            <hr class="invis">
+            <hr class="invis"> --}}
 
             <div class="row">
                 @forelse ($berita as $item)
@@ -34,8 +35,9 @@
                                     alt="" class="img-fluid">
                             </div>
                             <div class="meta-info-blog">
-                                <span><i class="fa fa-calendar"></i> <a href="#">{{ $item->created_at }}</a> </span>
-                                <span><i class="fa fa-tag"></i> <a href="#">{{ $item->type }}</a> </span>
+                                <span><i class="fa fa-calendar"></i> <a
+                                        href="">{{ $item->created_at->format('d M Y') }}</a> </span>
+                                <span><i class="fa fa-tag"></i> <a href="">{{ $item->type }}</a> </span>
                                 {{-- <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span> --}}
                             </div>
                             <div class="blog-title">
@@ -45,7 +47,8 @@
                                 <p>{!! $item->content !!}</p>
                             </div>
                             <div class="blog-button">
-                                <a class="hover-btn-new orange" href="#"><span>Read More<span></a>
+                                <a class="hover-btn-new orange"
+                                    href="{{ route('frontend-berita.show', $item->id) }}"><span>Read More<span></a>
                             </div>
                         </div>
                     </div><!-- end col -->

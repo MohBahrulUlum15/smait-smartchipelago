@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\VisiMisiTujuanMotto;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,8 @@ class VisiMisiTujuanMottoSeeder extends Seeder
      */
     public function run(): void
     {
+        VisiMisiTujuanMotto::truncate();
+
         collect([
             // Visi & Misi
             [
@@ -49,27 +52,27 @@ class VisiMisiTujuanMottoSeeder extends Seeder
                 'tipe' => 'motto'
             ],
             [
-                'deskripsi' => 'Tujuan 1',
+                'deskripsi' => 'Mewujudkan pelajar muslim yang berkarakter holistik melalui pembinaan dan pendidikan yang terstruktur dan berkelanjutan.',
                 'tipe' => 'tujuan'
             ],
             [
-                'deskripsi' => 'Tujuan 2',
+                'deskripsi' => 'Mengembangkan nilai-nilai kepemimpinan pada peserta didik melalui program pendidikan yang terintegrasi.',
                 'tipe' => 'tujuan'
             ],
             [
-                'deskripsi' => 'Tujuan 3',
+                'deskripsi' => 'Mendorong tumbuhnya jiwa enterpreneurship pada peserta didik melalui kegiatan pembelajaran dan pelatihan yang aplikatif.',
                 'tipe' => 'tujuan'
             ],
             [
-                'deskripsi' => 'Tujuan 4',
+                'deskripsi' => 'Mencetak peserta didik yang unggul dalam prestasi akademik dan non-akademik hingga tingkat regional, nasional, dan internasional.',
                 'tipe' => 'tujuan'
             ],
             [
-                'deskripsi' => 'Tujuan 5',
+                'deskripsi' => 'Mempersiapkan peserta didik dengan pengetahuan, sikap, dan keterampilan yang dibutuhkan untuk melanjutkan pendidikan ke jenjang yang lebih tinggi serta berkontribusi positif bagi masyarakat.',
                 'tipe' => 'tujuan'
             ],
             [
-                'deskripsi' => 'Tujuan 6',
+                'deskripsi' => 'Membangun lingkungan pendidikan yang islami, dinamis, dan mendukung pengembangan potensi peserta didik secara optimal.',
                 'tipe' => 'tujuan'
             ],
         ])->each(fn($data) => \App\Models\VisiMisiTujuanMotto::create($data));

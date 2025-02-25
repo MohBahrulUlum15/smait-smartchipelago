@@ -14,9 +14,10 @@
             <div class="collapse navbar-collapse" id="navbars-host">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item {{ request()->routeIs('frontend-beranda.index') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('frontend-beranda.index') }}">Beranda</a>
+                        <a class="nav-link" href="{{ route('frontend-beranda.index') }}"
+                            style="text-transform: capitalize">Beranda</a>
                     </li>
-                    <li
+                    {{-- <li
                         class="nav-item dropdown {{ request()->routeIs('frontend-visi-misi.index') || request()->routeIs('frontend-pengajar.index') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Profil
                             Sekolah</a>
@@ -26,25 +27,35 @@
                             <a class="dropdown-item {{ request()->routeIs('frontend-pengajar.index') ? 'active' : '' }}"
                                 href="{{ route('frontend-pengajar.index') }}">Pengajar</a>
                         </div>
+                    </li> --}}
+                    <li class="nav-item {{ request()->routeIs('frontend-visi-misi.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('frontend-visi-misi.index') }}"
+                            style="text-transform: capitalize">Profil Sekolah</a>
                     </li>
                     <li class="nav-item {{ request()->routeIs('frontend-program-unggulan.index') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('frontend-program-unggulan.index') }}">Program Unggulan</a>
+                        <a class="nav-link" href="{{ route('frontend-program-unggulan.index') }}"
+                            style="text-transform: capitalize">Program Unggulan</a>
                     </li>
                     <li class="nav-item {{ request()->routeIs('frontend-fasilitas.index') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('frontend-fasilitas.index') }}">Fasilitas</a>
+                        <a class="nav-link" href="{{ route('frontend-fasilitas.index') }}"
+                            style="text-transform: capitalize">Fasilitas</a>
                     </li>
-                    <li class="nav-item {{ request()->routeIs('frontend-prestasi.index') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('frontend-prestasi.index') }}">Prestasi</a>
+                    <li class="nav-item {{ request()->routeIs('frontend-pengajar.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('frontend-pengajar.index') }}"
+                            style="text-transform: capitalize">Pengajar</a>
                     </li>
                     <li
                         class="nav-item dropdown {{ Route::is('frontend-berita*', 'frontend-artikel*', 'frontend-kegiatan*') ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Berita
-                            & Kegiatan
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"
+                            style="text-transform: capitalize">Berita
+                            & Artikel
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="{{ route('frontend-berita.index') }}">Berita</a>
-                            <a class="dropdown-item" href="{{ route('frontend-kegiatan.index') }}">Kegiatan</a>
-                            <a class="dropdown-item" href="{{ route('frontend-artikel.index') }}">Artikel</a>
+                            <a class="dropdown-item" href="{{ route('frontend-berita.index') }}"
+                                style="text-transform: capitalize">Berita</a>
+                            {{-- <a class="dropdown-item" href="{{ route('frontend-kegiatan.index') }}">Kegiatan</a> --}}
+                            <a class="dropdown-item" href="{{ route('frontend-artikel.index') }}"
+                                style="text-transform: capitalize">Artikel</a>
                         </div>
                     </li>
                 </ul>

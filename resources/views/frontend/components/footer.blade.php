@@ -11,11 +11,11 @@
                         montes.</p>
                     <div class="footer-right">
                         <ul class="footer-links-soi">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-github"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fas fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fas fa-github"></i></a></li>
+                            <li><a href="#"><i class="fas fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fas fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fas fa-pinterest"></i></a></li>
                         </ul><!-- end links -->
                     </div>
                 </div><!-- end clearfix -->

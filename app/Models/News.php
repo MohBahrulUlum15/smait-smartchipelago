@@ -16,4 +16,9 @@ class News extends Model
         'supporting_images',
         'on_delete',
     ];
+
+    public function komentar()
+    {
+        return $this->hasMany(KomentarBerita::class, 'news_id');
+    }
 }
