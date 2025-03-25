@@ -5,8 +5,8 @@
 @push('styles')
     {{-- For styles --}}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> --}}
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> --}}
 
     {{-- Swipper --}}
     <!-- Tambahkan Swiper CSS -->
@@ -265,7 +265,8 @@
 
             <div class="row d-flex justify-content-center my-3">
                 <div class="blog-button">
-                    <a class="hover-btn-new orange" href="#"><span>Lihat Semua Program<span></a>
+                    <a class="hover-btn-new orange" href="{{ route('frontend-program-unggulan.index') }}"><span>Lihat
+                            Semua Program<span></a>
                 </div>
             </div>
 
@@ -328,7 +329,8 @@
 
             <div class="row d-flex justify-content-center my-3">
                 <div class="blog-button">
-                    <a class="hover-btn-new orange" href="#"><span>Lihat Semua Fasilitas<span></a>
+                    <a class="hover-btn-new orange" href="{{ route('frontend-fasilitas.index') }}"><span>Lihat Semua
+                            Fasilitas<span></a>
                 </div>
             </div>
 
@@ -341,14 +343,14 @@
             <div class="row text-left stat-wrap">
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
-                        <i class="fas fa-user-tie"></i> <!-- Ikon dari Font Awesome -->
+                        <i class="fa fa-user"></i> <!-- Ikon dari Font Awesome -->
                     </span>
                     <p class="stat_count">55</p>
                     <h3>Pengajar</h3>
                 </div><!-- end col -->
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
-                        <i class="fas fa-users"></i> <!-- Ikon dari Font Awesome -->
+                        <i class="fa fa-users"></i> <!-- Ikon dari Font Awesome -->
                     </span>
                     <p class="stat_count">12000</p>
                     <h3>Siswa & Siswi</h3>
@@ -356,7 +358,7 @@
 
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
-                        <i class="fas fa-user-graduate"></i> <!-- Ikon dari Font Awesome -->
+                        <i class="fa fa-graduation-cap"></i> <!-- Ikon dari Font Awesome -->
                     </span>
                     <p class="stat_count">240</p>
                     <h3>Lulusan</h3>
@@ -426,7 +428,8 @@
 
             <div class="row d-flex justify-content-center my-3">
                 <div class="blog-button">
-                    <a class="hover-btn-new orange" href="#"><span>Lihat Semua Berita<span></a>
+                    <a class="hover-btn-new orange" href="{{ route('frontend-berita.index') }}"><span>Lihat Semua
+                            Berita<span></a>
                 </div>
             </div>
         </div>

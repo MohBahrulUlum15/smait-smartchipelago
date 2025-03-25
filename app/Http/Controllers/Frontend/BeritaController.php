@@ -26,11 +26,15 @@ class BeritaController extends Controller
         $motto = VisiMisiTujuanMotto::where('tipe', 'motto')->where('on_delete', 0)->first();
         $berita = News::where('on_delete', 0)->find($id);
         $komentar = KomentarBerita::where('news_id', $id)->where('on_delete', 0)->get();
+
+        $beritaTerbaru = News::where('on_delete', 0)->orderBy('created_at', 'desc')->limit(5)->get();
+
         return view('frontend.pages.berita.detail', [
             'pageTitle' => 'Detail Berita',
             'motto' => $motto,
             'berita' => $berita,
             'komentar' => $komentar,
+            'beritaTerbaru' => $beritaTerbaru,
         ]);
     }
 

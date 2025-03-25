@@ -1,14 +1,14 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="">SMAIT Al-Ghozali</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="">SA</a>
         </div>
         <ul class="sidebar-menu">
-            <li class="{{ Request::is('dashboard-backend') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('dashboard-backend.index') }}"><i class="fas fa-clone"></i>
+            <li class="{{ Request::is('dashboard*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-clone"></i>
                     <span>Dashboard</span></a>
             </li>
             <li class="menu-header">Manajemen Konten Landing Page</li>
@@ -40,18 +40,18 @@
                 <a class="nav-link" href="{{ route('fasilitas.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Fasilitas</span></a>
             </li>
-            <li class="{{ Request::is('prestasi*') ? 'active' : '' }}">
+            {{-- <li class="{{ Request::is('prestasi*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('prestasi.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Prestasi</span></a>
-            </li>
+            </li> --}}
             {{-- <li class="{{ Request::is('karya*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('karya.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Karya</span></a>
             </li> --}}
-            <li class="{{ Request::is('kegiatan*') ? 'active' : '' }}">
+            {{-- <li class="{{ Request::is('kegiatan*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('kegiatan.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Kegiatan</span></a>
-            </li>
+            </li> --}}
             <li class="{{ Request::is('berita*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('berita.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Berita</span></a>

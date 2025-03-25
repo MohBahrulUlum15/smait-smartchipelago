@@ -1,52 +1,37 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-xs-12">
                 <div class="widget clearfix">
-                    <div class="widget-title">
-                        <h3>About US</h3>
+                    <div style="width: 50px; height: 50px; margin-bottom: 20px;">
+                        <img src="{{ asset('assets/images/logo-fix.png') }}" alt=""
+                            style="width: 100%; height: 100%;">
                     </div>
-                    <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus
-                        bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis
-                        montes.</p>
+                    <div class="widget-title">
+                        <h3>SMAIT Al-Ghozali Jember</h3>
+                    </div>
+                    <p> “Sekolah Impian Calon Pemimpin Masa Depan Berkarakter dan Berbudaya”.</p>
                     <div class="footer-right">
                         <ul class="footer-links-soi">
-                            <li><a href="#"><i class="fas fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fas fa-github"></i></a></li>
-                            <li><a href="#"><i class="fas fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fas fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fas fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
                         </ul><!-- end links -->
                     </div>
                 </div><!-- end clearfix -->
             </div><!-- end col -->
 
-            <div class="col-lg-4 col-md-4 col-xs-12">
-                <div class="widget clearfix">
-                    <div class="widget-title">
-                        <h3>Information Link</h3>
-                    </div>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul><!-- end links -->
-                </div><!-- end clearfix -->
-            </div><!-- end col -->
-
-            <div class="col-lg-4 col-md-4 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
                         <h3>Contact Details</h3>
                     </div>
 
                     <ul class="footer-links">
-                        <li><a href="mailto:#">info@yoursite.com</a></li>
-                        <li><a href="#">www.yoursite.com</a></li>
-                        <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
-                        <li>+61 3 8376 6284</li>
+                        <li><a href="mailto:#">smai.alghozalijbr@gmail.com</a></li>
+                        <li><a href="#">smait.smartchipelago.com</a></li>
+                        <li>Jl. Kaliurang No. 175, Sumbersari, Jember</li>
+                        <li>+62 8213 9537 299</li>
                     </ul><!-- end links -->
                 </div><!-- end clearfix -->
             </div><!-- end col -->

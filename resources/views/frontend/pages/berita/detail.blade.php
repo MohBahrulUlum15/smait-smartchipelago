@@ -148,7 +148,7 @@
 
                 </div><!-- end col -->
                 <div class="col-lg-3 col-12 right-single">
-                    <div class="widget-search">
+                    {{-- <div class="widget-search">
                         <div class="site-search-area">
                             <form method="get" id="site-searchform" action="#">
                                 <div>
@@ -158,21 +158,23 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="widget-categories">
-                        <h3 class="widget-title">Categories</h3>
+                        <h3 class="widget-title">Berita Terbaru</h3>
                         <ul>
-                            <li><a href="#">Political Science</a></li>
-                            <li><a href="#">Business Leaders Guide</a></li>
-                            <li><a href="#">Become a Product Manage</a></li>
-                            <li><a href="#">Language Education</a></li>
-                            <li><a href="#">Micro Biology</a></li>
-                            <li><a href="#">Social Media Management</a></li>
+                            @forelse ($beritaTerbaru as $item)
+                                <li>
+                                    <a href="{{ route('frontend-berita.show', $item->id) }}">{{ $item->title }}</a>
+                                </li>
+                            @empty
+                                <li><a href="#">Belum ada data berita.</a></li>
+                            @endforelse
                         </ul>
                     </div>
-                    <div class="widget-tags">
-                        <h3 class="widget-title">Search Tags</h3>
+                    {{-- <div class="widget-tags">
+                        <h3 class="widget-title">Tags Berita</h3>
                         <ul class="tags">
+
                             <li><a href="#"><b>business</b></a></li>
                             <li><a href="#"><b>jquery</b></a></li>
                             <li><a href="#">corporate</a></li>
@@ -187,7 +189,7 @@
                             <li><a href="#">javascript</a></li>
                             <li><a href="#"><b>Best jQuery</b></a></li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div><!-- end row -->
         </div><!-- end container -->

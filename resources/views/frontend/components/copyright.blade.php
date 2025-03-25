@@ -2,8 +2,9 @@
     <div class="container">
         <div class="footer-distributed">
             <div class="footer-center">
-                <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">SmartEDU</a> Design By :
-                    <a href="https://html.design/">html design</a>
+                <p class="footer-company-name">All Rights Reserved. &copy; 2025 <a href="#">SMAIT Al-Ghozali</a>
+                    Design By :
+                    <a target="_blank" rel="noopener noreferrer" href="https://smartchipelago.com/">Smartchipelago</a>
                 </p>
             </div>
         </div>

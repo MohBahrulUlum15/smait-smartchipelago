@@ -34,7 +34,8 @@
                                 </div>
                             </div>
                             <div class="team-content">
-                                <h3 class="title">{{ $item->nama ?? 'Nama Pengajar' }}</h3>
+                                <h3 class="title" style="text-transform: capitalize">{{ $item->nama ?? 'Nama Pengajar' }}
+                                </h3>
                                 <span class="post">{{ $item->jabatan ?? 'Jabatan Pengajar' }}</span>
                             </div>
                         </div>
