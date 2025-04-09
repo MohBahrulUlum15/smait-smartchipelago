@@ -11,9 +11,9 @@
 
     <style>
         /* .supporting-images-container {
-                display: flex;
-                gap: 10px;
-            } */
+                    display: flex;
+                    gap: 10px;
+                } */
 
         .image-preview {
             flex: 1;
@@ -22,9 +22,9 @@
         }
 
         /* .image-preview.landscape {
-                width: 150px;
-                height: 100px;
-            } */
+                    width: 150px;
+                    height: 100px;
+                } */
     </style>
 @endpush
 
@@ -159,7 +159,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group row mb-3">
+                                    <div class="form-group row mb-0">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Quote</label>
                                         <div class="col-sm-12 col-md-7">
                                             @error('quote')
@@ -173,8 +173,10 @@
 
                                     <div class="form-group row mb-3">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                        <div class="col-sm-12 col-md-7 text-right">
+                                            <hr class="mb-3">
+                                            <button type="submit" class="btn btn-primary"
+                                                style="min-width: 100px;">Simpan</button>
                                         </div>
                                     </div>
                                 </form>

@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', $pageTitle ?? 'Berita')
+@section('title', $pageTitle ?? 'Program')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -24,11 +24,11 @@
                 <div class="section-header-back">
                     <a href="{{ route('program.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
                 </div>
-                <h1>Buat Berita</h1>
+                <h1>Buat Program</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Berita</a></div>
-                    <div class="breadcrumb-item">Buat Berita</div>
+                    <div class="breadcrumb-item"><a href="#">Program</a></div>
+                    <div class="breadcrumb-item">Buat Program</div>
                 </div>
             </div>
             <div class="section-body">
@@ -85,7 +85,7 @@
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                         <div class="col-sm-12 col-md-7 text-right">
                                             <hr class="mb-3">
-                                            <button type="submit" class="btn btn-success"
+                                            <button type="submit" class="btn btn-primary"
                                                 style="min-width: 100px;">Simpan</button>
                                         </div>
                                     </div>

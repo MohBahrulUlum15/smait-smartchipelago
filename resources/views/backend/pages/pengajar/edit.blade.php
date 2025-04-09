@@ -177,7 +177,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group row mb-3">
+                                    <div class="form-group row mb-0">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Quote</label>
                                         <div class="col-sm-12 col-md-7">
                                             @error('quote')
@@ -191,9 +191,10 @@
 
                                     <div class="form-group row mb-3">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <button type="submit" class="btn btn-primary">Simpan</button>
-                                            {{-- <button type="reset" class="btn btn-secodary">Batal</button> --}}
+                                        <div class="col-sm-12 col-md-7 text-right">
+                                            <hr class="mb-3">
+                                            <button type="submit" class="btn btn-primary"
+                                                style="min-width: 100px;">Simpan</button>
                                         </div>
                                     </div>
                                 </form>

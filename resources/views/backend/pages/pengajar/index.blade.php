@@ -6,7 +6,10 @@
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="{{ asset('assets/backend/library/selectric/public/selectric.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('assets/backend/library/datatables/media/css/jquery.dataTables.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/backend/library/datatables/media/css/jquery.dataTables.min.css') }}"> --}}
+
+    {{-- CSS Library for Datatable Bootstrap 5 --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.css">
 @endpush
 
 @section('main')
@@ -25,12 +28,14 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="float-right" style="margin-bottom: 6px;">
-                                    <a href="{{ route('pengajar.create') }}" class="btn btn-primary">Tambah Pengajar
-                                    </a>
+                                <div class="float-right mb-2">
+                                    <div class="d-flex mx-3 justify-content-end">
+                                        <a href="{{ route('pengajar.create') }}" class="btn btn-primary">Tambah Pengajar
+                                        </a>
+                                    </div>
                                 </div>
 
-                                @if (Session::has('success'))
+                                {{-- @if (Session::has('success'))
                                     <div class="clearfix mt-2"></div>
                                     <div class="alert alert-light alert-dismissible show fade">
                                         <div class="alert-body">
@@ -52,11 +57,11 @@
                                         </div>
                                     </div>
                                 @endif
-                                <div class="clearfix mb-2"></div>
+                                <div class="clearfix mb-2"></div> --}}
 
                                 {{-- Data Table --}}
                                 <div class="table-responsive">
-                                    <table class="table-hover table table-lg" id="table-1">
+                                    <table id="myDataTable" class="table table-hover table-sm" style="width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th scope="row" class="text-center">
@@ -191,11 +196,80 @@
     <script src="{{ asset('assets/backend/library/summernote/dist/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('assets/backend/library/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
 
-    <!-- Page Specific JS File -->
+    {{-- <!-- Page Specific JS File -->
     <script src="{{ asset('assets/backend/js/page/index-0.js') }}"></script>
 
     <script src="{{ asset('assets/backend/library/datatables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/backend/library/jquery-ui-dist/jquery-ui.min.js') }}"></script>
     <!-- Page Specific JS File -->
-    <script src="{{ asset('assets/backend/js/page/modules-datatables.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/page/modules-datatables.js') }}"></script> --}}
+
+    <!-- JS Libraies -->
+    <script src="{{ asset('assets/backend/library/sweetalert/dist/sweetalert.min.js') }}"></script>
+
+    <!-- Page Specific JS File -->
+    <script src="{{ asset('assets/backend/js/page/modules-sweetalert.js') }}"></script>
+
+    <!-- Sweet Alert Notifikasi dengan Penghapusan Session -->
+    <script>
+        $(document).ready(function() {
+            // Sweet Alert untuk success
+            @if (Session::has('success'))
+                swal({
+                    title: 'Sukses!',
+                    text: '{{ Session::get('success') }}',
+                    icon: 'success',
+                    button: 'OK'
+                }).then(() => {
+                    // Kirim request untuk menghapus session
+                    $.ajax({
+                        url: '{{ route('clear.session') }}',
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            console.log('Session cleared');
+                        }
+                    });
+                });
+            @endif
+
+            // Sweet Alert untuk error
+            @if (Session::has('errorr'))
+                swal({
+                    title: 'Oops...',
+                    text: '{{ Session::get('error') }}',
+                    icon: 'error',
+                    button: 'OK'
+                }).then(() => {
+                    // Kirim request untuk menghapus session
+                    $.ajax({
+                        url: '{{ route('clear.session') }}',
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            console.log('Session cleared');
+                        }
+                    });
+                });
+            @endif
+        });
+    </script>
+
+    {{-- Datatable Bootsrap 5 Library --}}
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#myDataTable').DataTable({
+                "scrollX": true,
+                // "scrollY": true,
+            });
+        });
+    </script>
 @endpush
