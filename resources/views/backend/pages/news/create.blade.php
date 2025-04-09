@@ -10,17 +10,26 @@
     <link rel="stylesheet" href="{{ asset('assets/backend/library/dropzone/dist/dropzone.css') }}">
 
     <style>
-        .supporting-images-container {
-            display: flex;
-            gap: 10px;
-            /* Adjust the gap as needed */
-        }
-
         .image-preview {
             flex: 1;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            border: 2px dashed #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center center;
+            color: #ccc;
+            font-size: 18px;
             /* Adjust the margin as needed */
+        }
+
+        .supporting-images-container {
+            display: flex;
+            gap: 10px;
+            /* Adjust the gap as needed */
         }
 
         .image-preview.landscape {
@@ -76,8 +85,7 @@
                                 @endif
                                 <div class="clearfix mb-2"></div>
 
-                                <form action="{{ route('berita.store') }}" method="POST"
-                                    enctype="multipart/form-data">
+                                <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group row mb-3">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Gambar
@@ -124,7 +132,9 @@
                                     </div>
 
                                     <div class="form-group row mb-3">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tags</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tags
+                                            <small>(Contoh:
+                                                tag1, tag2)</small></label>
                                         <div class="col-sm-12 col-md-7">
                                             <input type="text" class="form-control inputtags" name="tags[]"
                                                 value="{{ old('tags') }}" required>
@@ -182,7 +192,7 @@
                                     </div>
 
                                     {{-- FITUR GAMBAR TAMBAHAN --}}
-                                    {{-- <div class="form-group row mb-3">
+                                    <div class="form-group row mb-3">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Gambar
                                             Tambahan</label>
                                         <div class="col-sm-12 col-md-7">
@@ -210,7 +220,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
 
                                     {{-- <div class="form-group row mb-3">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Gambar

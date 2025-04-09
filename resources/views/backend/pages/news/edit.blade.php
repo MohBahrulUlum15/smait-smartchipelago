@@ -193,7 +193,9 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    {{-- <div class="form-group row mb-3">
+
+
+                                    <div class="form-group row mb-3">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Gambar
                                             Tambahan</label>
                                         <div class="col-sm-12 col-md-7">
@@ -218,7 +220,7 @@
                                                 @endfor
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
 
                                     {{-- <div class="form-group row mb-3">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Gambar
@@ -294,7 +296,7 @@
     <script src="{{ asset('assets/backend/js/page/features-post-create.js') }}"></script>
     <script src="{{ asset('assets/backend/js/page/components-multiple-upload.js') }}"></script>
 
-    {{-- <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             function readURL(input, previewId, labelId) {
                 if (input.files && input.files[0]) {
@@ -321,7 +323,7 @@
                 readURL(this, 'supporting-image-preview-3', 'supporting-image-label-3');
             });
         });
-    </script> --}}
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
