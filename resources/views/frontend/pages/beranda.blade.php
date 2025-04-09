@@ -349,14 +349,14 @@
                     <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
                         <i class="fa fa-user"></i> <!-- Ikon dari Font Awesome -->
                     </span>
-                    <p class="stat_count">55</p>
+                    <p class="stat_count">{{ $jumlah_pengajar ?? '0' }}</p>
                     <h3>Pengajar</h3>
                 </div><!-- end col -->
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
                         <i class="fa fa-users"></i> <!-- Ikon dari Font Awesome -->
                     </span>
-                    <p class="stat_count">12000</p>
+                    <p class="stat_count">{{ $statistik->jumlah_siswa ?? '0' }}</p>
                     <h3>Siswa & Siswi</h3>
                 </div><!-- end col -->
 
@@ -364,7 +364,7 @@
                     <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
                         <i class="fa fa-graduation-cap"></i> <!-- Ikon dari Font Awesome -->
                     </span>
-                    <p class="stat_count">240</p>
+                    <p class="stat_count">{{ $statistik->jumlah_lulusan ?? '0' }}</p>
                     <h3>Lulusan</h3>
                 </div><!-- end col -->
 
