@@ -38,28 +38,6 @@
                                 <h4>---------- Statistik Sekolah ----------</h4>
                             </div>
                             <div class="card-body">
-                                @if (Session::has('success'))
-                                    <div class="clearfix mt-2"></div>
-                                    <div class="alert alert-light alert-dismissible show fade">
-                                        <div class="alert-body">
-                                            <button class="close" data-dismiss="alert">
-                                                <span>&times;</span>
-                                            </button>
-                                            {{ Session::get('success') }}
-                                        </div>
-                                    </div>
-                                @endif
-                                @if (Session::has('errorr'))
-                                    <div class="clearfix mt-2"></div>
-                                    <div class="alert alert-danger alert-dismissible show fade">
-                                        <div class="alert-body">
-                                            <button class="close" data-dismiss="alert">
-                                                <span>&times;</span>
-                                            </button>
-                                            {{ Session::get('error') }}
-                                        </div>
-                                    </div>
-                                @endif
                                 <div class="clearfix mb-2"></div>
                                 <form action="{{ route('statistik.update', $statistik->id) }}" method="post"
                                     enctype="multipart/form-data">
@@ -109,10 +87,10 @@
                                     </div>
 
                                     <div class="form-group row mb-3">
-                                        {{-- <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label> --}}
-                                        <div class="col-12 text-center">
-                                            {{-- <hr class="mb-3"> --}}
-                                            <button type="submit" class="btn btn-success"
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                        <div class="col-sm-12 col-md-7 text-right">
+                                            <hr class="mb-3">
+                                            <button type="submit" class="btn btn-primary"
                                                 style="min-width: 100px;">Simpan</button>
                                         </div>
                                     </div>
@@ -132,6 +110,60 @@
     <script src="{{ asset('assets/backend/library/selectric/public/jquery.selectric.min.js') }}"></script>
     <script src="{{ asset('assets/backend/library/upload-preview/upload-preview.js') }}"></script>
 
+    <!-- JS Libraies -->
+    <script src="{{ asset('assets/backend/library/summernote/dist/summernote-bs4.js') }}"></script>
+    <script src="{{ asset('assets/backend/library/sweetalert/dist/sweetalert.min.js') }}"></script>
+
     <!-- Page Specific JS File -->
     <script src="{{ asset('assets/backend/js/page/features-post-create.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/page/modules-sweetalert.js') }}"></script>
+
+    <!-- Sweet Alert Notifikasi dengan Penghapusan Session -->
+    <script>
+        $(document).ready(function() {
+            // Sweet Alert untuk success
+            @if (Session::has('success'))
+                swal({
+                    title: 'Sukses!',
+                    text: '{{ Session::get('success') }}',
+                    icon: 'success',
+                    button: 'OK'
+                }).then(() => {
+                    // Kirim request untuk menghapus session
+                    $.ajax({
+                        url: '{{ route('clear.session') }}',
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            console.log('Session cleared');
+                        }
+                    });
+                });
+            @endif
+
+            // Sweet Alert untuk error
+            @if (Session::has('errorr'))
+                swal({
+                    title: 'Oops...',
+                    text: '{{ Session::get('error') }}',
+                    icon: 'error',
+                    button: 'OK'
+                }).then(() => {
+                    // Kirim request untuk menghapus session
+                    $.ajax({
+                        url: '{{ route('clear.session') }}',
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            console.log('Session cleared');
+                        }
+                    });
+                });
+            @endif
+        });
+    </script>
 @endpush
