@@ -32,7 +32,8 @@
                         <div class="blog-item">
                             <div class="image-blog">
                                 <img src="{{ $item->featured_image ?? asset('assets/frontend/images/blog_1.jpg') }}"
-                                    alt="" class="img-fluid">
+                                    alt="" class="img-fluid"
+                                    style="max-height: 150px; width: 100%; object-fit: cover;>
                             </div>
                             <div class="meta-info-blog">
                                 <span><i class="fa fa-calendar"></i> <a

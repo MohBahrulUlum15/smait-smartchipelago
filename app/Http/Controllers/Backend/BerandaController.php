@@ -27,10 +27,18 @@ class BerandaController extends Controller
     {
         $beranda = Beranda::findOrFail($id);
 
+        // dd($beranda, $request->all());
+
         $request->validate([
             'slider_img_1' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'slider_img_2' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'slider_img_3' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'deskripsi_slider_1' => 'required|string',
+            'deskripsi_slider_2' => 'required|string',
+            'deskripsi_slider_3' => 'required|string',
+            'link_slider_1' => 'nullable|string',
+            'link_slider_2' => 'nullable|string',
+            'link_slider_3' => 'nullable|string',
         ]);
 
         // img slider 1
@@ -79,6 +87,12 @@ class BerandaController extends Controller
             'slider_img_1' => $sliderImg1Path,
             'slider_img_2' => $sliderImg2Path,
             'slider_img_3' => $sliderImg3Path,
+            'deskripsi_slider_1' => $request->deskripsi_slider_1,
+            'deskripsi_slider_2' => $request->deskripsi_slider_2,
+            'deskripsi_slider_3' => $request->deskripsi_slider_3,
+            'link_slider_1' => $request->link_slider_1,
+            'link_slider_2' => $request->link_slider_2,
+            'link_slider_3' => $request->link_slider_3,
         ]);
 
         return redirect()->route('beranda.index')->with('success', 'Updated successfully.');

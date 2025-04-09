@@ -17,7 +17,7 @@ class NewsSeeder extends Seeder
     public function run()
     {
         // Hapus semua data sebelumnya
-        News::truncate();
+        // News::truncate();
 
         // Buat data dummy
         for ($i = 0; $i <= 5; $i++) {

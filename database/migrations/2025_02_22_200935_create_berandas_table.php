@@ -16,6 +16,12 @@ return new class extends Migration
             $table->string('slider_img_1');
             $table->string('slider_img_2');
             $table->string('slider_img_3');
+            $table->text('deskripsi_slider_1');
+            $table->text('deskripsi_slider_2');
+            $table->text('deskripsi_slider_3');
+            $table->string('link_slider_1')->nullable();
+            $table->string('link_slider_2')->nullable();
+            $table->string('link_slider_3')->nullable();
             $table->timestamps();
         });
     }

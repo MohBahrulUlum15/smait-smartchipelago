@@ -145,6 +145,139 @@
                                         </div>
                                     </div>
                                     <div class="form-group row mb-3">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi
+                                            Slider
+                                            1</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text" class="form-control" name="deskripsi_slider_1"
+                                                value="{{ $beranda->deskripsi_slider_1 ?? old('deskripsi_slider_1') }}"
+                                                required>
+                                            @error('deskripsi_slider_1')
+                                                <strong class="fw-bold d-block text-danger mt-2">
+                                                    <small>&nbsp;* {{ $message }}</small>
+                                                </strong>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    {{-- <div class="form-group row mb-3">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Link
+                                            Slider
+                                            1 (Optional)</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text" class="form-control" name="link_slider_1"
+                                                value="{{ old('link_slider_1') }}"
+                                                placeholder="Contoh: https://www.google.com">
+                                            @error('link_slider_1')
+                                                <strong class="fw-bold d-block text-danger mt-2">
+                                                    <small>&nbsp;* {{ $message }}</small>
+                                                </strong>
+                                            @enderror
+                                        </div>
+                                    </div> --}}
+                                    <div class="form-group row mb-3">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Link
+                                            slider 1</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="link" class="form-control" name="link_slider_1"
+                                                value="{{ $beranda->link_slider_1 ?? old('link_slider_1') }}"
+                                                placeholder="Contoh: https://www.google.com">
+                                            @error('link_slider_1')
+                                                <strong class="fw-bold d-block text-danger mt-2">
+                                                    <small>&nbsp;* {{ $message }}</small>
+                                                </strong>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi
+                                            Slider
+                                            2</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text" class="form-control" name="deskripsi_slider_2"
+                                                value="{{ $beranda->deskripsi_slider_2 ?? old('deskripsi_slider_2') }}"
+                                                required>
+                                            @error('deskripsi_slider_2')
+                                                <strong class="fw-bold d-block text-danger mt-2">
+                                                    <small>&nbsp;* {{ $message }}</small>
+                                                </strong>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    {{-- <div class="form-group row mb-3">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Link
+                                            Slider
+                                            2 (Optional)</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text" class="form-control" name="link_slider_2"
+                                                value="{{ old('link_slider_2') }}"
+                                                placeholder="Contoh: https://www.google.com">
+                                            @error('link_slider_2')
+                                                <strong class="fw-bold d-block text-danger mt-2">
+                                                    <small>&nbsp;* {{ $message }}</small>
+                                                </strong>
+                                            @enderror
+                                        </div>
+                                    </div> --}}
+                                    <div class="form-group row mb-3">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Link
+                                            slider 2</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="link" class="form-control" name="link_slider_2"
+                                                value="{{ $beranda->link_slider_2 ?? old('link_slider_2') }}"
+                                                placeholder="Contoh: https://www.google.com">
+                                            @error('link_slider_2')
+                                                <strong class="fw-bold d-block text-danger mt-2">
+                                                    <small>&nbsp;* {{ $message }}</small>
+                                                </strong>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi
+                                            Slider
+                                            3</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text" class="form-control" name="deskripsi_slider_3"
+                                                value="{{ $beranda->deskripsi_slider_3 ?? old('deskripsi_slider_3') }}"
+                                                required>
+                                            @error('deskripsi_slider_3')
+                                                <strong class="fw-bold d-block text-danger mt-2">
+                                                    <small>&nbsp;* {{ $message }}</small>
+                                                </strong>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    {{-- <div class="form-group row mb-3">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Link
+                                            Slider
+                                            3 (Optional)</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text" class="form-control" name="link_slider_3"
+                                                value="{{ old('link_slider_3') }}"
+                                                placeholder="Contoh: https://www.google.com">
+                                            @error('link_slider_3')
+                                                <strong class="fw-bold d-block text-danger mt-2">
+                                                    <small>&nbsp;* {{ $message }}</small>
+                                                </strong>
+                                            @enderror
+                                        </div>
+                                    </div> --}}
+                                    <div class="form-group row mb-3">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Link
+                                            slider 3</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="link" class="form-control" name="link_slider_3"
+                                                value="{{ $beranda->link_slider_3 ?? old('link_slider_3') }}"
+                                                placeholder="Contoh: https://www.google.com">
+                                            @error('link_slider_3')
+                                                <strong class="fw-bold d-block text-danger mt-2">
+                                                    <small>&nbsp;* {{ $message }}</small>
+                                                </strong>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
                                         {{-- <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label> --}}
                                         <div class="col-12 text-center">
                                             {{-- <hr class="mb-3"> --}}

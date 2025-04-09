@@ -104,10 +104,11 @@
                                 <div class="col-md-12 col-sm-12 text-right">
                                     <div class="big-tagline">
                                         <h2><strong>SMAIT </strong>Al-Ghozali</h2>
-                                        <p class="lead">{{ $visi->deskripsi ?? 'Teks Visi' }}</p>
+                                        <p class="lead">{{ $beranda->deskripsi_slider_1 ?? $visi->deskripsi }}</p>
                                         {{-- <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
-                                        <a href="#" class="hover-btn-new"><span>Selengkapnya</span></a>
+                                        <a href="{{ $beranda->link_slider_1 ?? '#' }}" target="blank"
+                                            class="hover-btn-new"><span>Selengkapnya</span></a>
                                     </div>
                                 </div>
                             </div><!-- end row -->
@@ -126,10 +127,11 @@
                                         <h2 data-animation="animated zoomInRight">SMAIT <strong>Al-Ghozali</strong>
                                         </h2>
                                         <p class="lead" data-animation="animated fadeInLeft">
-                                            {{ $motto->deskripsi ?? 'Teks Motto' }}</p>
+                                            {{ $beranda->deskripsi_slider_2 ?? $motto->deskripsi }}</p>
                                         {{-- <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
-                                        <a href="#" class="hover-btn-new"><span>Selengkapnya</span></a>
+                                        <a href="{{ $beranda->link_slider_2 ?? '#' }}" target="blank"
+                                            class="hover-btn-new"><span>Selengkapnya</span></a>
                                     </div>
                                 </div>
                             </div><!-- end row -->
@@ -146,11 +148,13 @@
                                 <div class="col-md-12 col-sm-12 text-center">
                                     <div class="big-tagline">
                                         <h2 data-animation="animated zoomInRight"><strong>SMAIT</strong> Al-Ghozali</h2>
-                                        <p class="lead" data-animation="animated fadeInLeft">Welcome to Islamic Leader
-                                            School, SMA IT Al-Ghozali Jember</p>
+                                        <p class="lead" data-animation="animated fadeInLeft">
+                                            {{ $beranda->deskripsi_slider_3 ?? 'Welcome to Islamic Leader School, SMA IT Al-Ghozali Jember' }}
+                                        </p>
                                         {{-- <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
-                                        <a href="#" class="hover-btn-new"><span>Selengkapnya</span></a>
+                                        <a href="{{ $beranda->link_slider_3 ?? '#' }}" target="blank"
+                                            class="hover-btn-new"><span>Selengkapnya</span></a>
                                     </div>
                                 </div>
                             </div><!-- end row -->
@@ -389,7 +393,8 @@
                         <div class="blog-item">
                             <div class="image-blog">
                                 <img src="{{ $item->featured_image ?? asset('assets/frontend/images/blog_1.jpg') }}"
-                                    alt="" class="img-fluid">
+                                    alt="" class="img-fluid"
+                                    style="max-height: 150px; width: 100%; object-fit: cover;>
                             </div>
                             <div class="meta-info-blog">
                                 <span><i class="fa fa-calendar"></i> <a
