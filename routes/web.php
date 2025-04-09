@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\PrestasiController;
 use App\Http\Controllers\Backend\ProgramController;
 use App\Http\Controllers\Backend\SambutanController;
 use App\Http\Controllers\Backend\SessionController;
+use App\Http\Controllers\Backend\StatistikController;
 use App\Http\Controllers\Backend\VisiMisiController;
 use App\Http\Controllers\Frontend\BerandaController;
 use App\Http\Controllers\Frontend\ArtikelController as FrontendArtikelController;
@@ -28,7 +29,7 @@ use App\Http\Controllers\Frontend\PrestasiController as FrontendPrestasiControll
 use App\Http\Controllers\Frontend\VisiMisiController as FrontendVisiMisiController;
 use App\Http\Controllers\Frontend\ProgramUnggulanController as FrontendProgramUnggulanController;
 
-Route::get('/', [BerandaController::class, 'index'])->name('beranda.index');
+Route::get('/', [BerandaController::class, 'index'])->name('base-frontend-beranda.index');
 
 
 // Route::get('/dashboard', function () {
@@ -149,6 +150,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/artikel/{id}/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
     Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
     Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
+
+    // Statistik Backend
+    Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik.index');
+    Route::put('/statistik/{id}', [StatistikController::class, 'update'])->name('statistik.update');
 
     // ----------------- CLEAR SESSION ROUTE ----------------- //
     Route::post('/clear-session', [SessionController::class, 'clearSession'])->name('clear.session');

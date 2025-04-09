@@ -40,6 +40,10 @@
                 <a class="nav-link" href="{{ route('fasilitas.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Fasilitas</span></a>
             </li>
+            <li class="{{ Request::is('statistik*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('statistik.index') }}"><i class="fas fa-chart-bar"></i>
+                    <span>Statistik</span></a>
+            </li>
             {{-- <li class="{{ Request::is('prestasi*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('prestasi.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Prestasi</span></a>
