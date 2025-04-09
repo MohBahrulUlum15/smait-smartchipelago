@@ -6,8 +6,11 @@
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="{{ asset('assets/backend/library/selectric/public/selectric.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('assets/backend/library/datatables/media/css/jquery.dataTables.min.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('assets/backend/library/datatables/media/css/jquery.dataTables.min.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/backend/library/datatables/media/css/jquery.dataTables.min.css') }}"> --}}
+
+    {{-- CSS Library for Datatable Bootstrap 5 --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.css">
 @endpush
 
 @section('main')
@@ -32,45 +35,16 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                {{-- <div class="float-left">
-                                    <form action="{{ route('berita.index') }}" method="GET">
-                                        <div class="input-group">
-                                            <label for="perPage">Show entries</label>
-                                            <select name="perPage" class="form-control selectric"
-                                                onchange="this.form.submit()">
-                                                <option value="10" {{ request('perPage', 10) == 10 ? 'selected' : '' }}>
-                                                    10
-                                                </option>
-                                                <option value="25" {{ request('perPage') == 25 ? 'selected' : '' }}>25
-                                                </option>
-                                                <option value="50" {{ request('perPage') == 50 ? 'selected' : '' }}>50
-                                                </option>
-                                                <option value="100" {{ request('perPage') == 100 ? 'selected' : '' }}>100
-                                                </option>
-                                            </select>
-                                            <input type="hidden" name="search" value="{{ request('search') }}">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="float-right">
-                                    <form action="{{ route('berita.index') }}" method="GET">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search" name="search"
-                                                value="{{ request('search') }}">
-                                            <div class="input-group-append">
-                                                <button type="submit" class="btn btn-primary"><i
-                                                        class="fas fa-search"></i></button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div> --}}
-                                <div class="float-right mb-3">
-                                    <a href="{{ route('berita.create') }}" class="btn btn-primary">Tambah Berita
-                                    </a>
+                                <div class="float-right mb-2">
+                                    <div class="d-flex mx-3 justify-content-end">
+                                        <a href="{{ route('berita.create') }}" class="btn btn-primary">Tambah Berita
+                                        </a>
+                                    </div>
                                 </div>
                                 {{-- Data Table --}}
                                 <div class="table-responsive">
-                                    <table class="table-hover table table-lg" id="table-1">
+                                    {{-- Data Table --}}
+                                    <table id="myDataTable" class="table table-hover table-sm" style="width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th scope="row" class="text-center">
@@ -159,34 +133,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-
-                                {{-- <div class="float-right">
-                                    <nav>
-                                        <ul class="pagination">
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item active">
-                                                <a class="page-link" href="#">1</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">2</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">3</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true">&raquo;</span>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -198,22 +144,9 @@
 
 @push('scripts')
     <!-- JS Libraies -->
-    <script src="{{ asset('assets/backend/library/simpleweather/jquery.simpleWeather.min.js') }}"></script>
-    <script src="{{ asset('assets/backend/library/chart.js/dist/Chart.min.js') }}"></script>
-    <script src="{{ asset('assets/backend/library/jqvmap/dist/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('assets/backend/library/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
-    <script src="{{ asset('assets/backend/library/summernote/dist/summernote-bs4.min.js') }}"></script>
-    <script src="{{ asset('assets/backend/library/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
-
-    <!-- Page Specific JS File -->
-    <script src="{{ asset('assets/backend/js/page/index-0.js') }}"></script>
-
-    <script src="{{ asset('assets/backend/library/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/backend/library/jquery-ui-dist/jquery-ui.min.js') }}"></script>
-    <!-- Page Specific JS File -->
-    <script src="{{ asset('assets/backend/js/page/modules-datatables.js') }}"></script>
-
     <script src="{{ asset('assets/backend/library/sweetalert/dist/sweetalert.min.js') }}"></script>
+
+    <!-- Page Specific JS File -->
     <script src="{{ asset('assets/backend/js/page/modules-sweetalert.js') }}"></script>
 
     <!-- Sweet Alert Notifikasi dengan Penghapusan Session -->
@@ -262,6 +195,20 @@
                     });
                 });
             @endif
+        });
+    </script>
+
+    {{-- Datatable Bootsrap 5 Library --}}
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#myDataTable').DataTable({
+                "scrollX": true,
+                // "scrollY": true,
+            });
         });
     </script>
 @endpush

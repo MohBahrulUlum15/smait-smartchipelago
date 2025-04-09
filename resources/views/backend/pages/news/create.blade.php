@@ -229,7 +229,7 @@
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                         <div class="col-sm-12 col-md-7 text-right">
                                             <hr class="mb-3">
-                                            <button type="submit" class="btn btn-success"
+                                            <button type="submit" class="btn btn-primary"
                                                 style="min-width: 100px;">Simpan</button>
                                         </div>
                                     </div>
