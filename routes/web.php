@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\ArtikelController;
 use App\Http\Controllers\Backend\BerandaController as BackendBerandaController;
 use App\Http\Controllers\Backend\DashboardController as BackendDashboardController;
+use App\Http\Controllers\Backend\DetailInformationController;
 use App\Http\Controllers\Backend\FasilitasController;
 use App\Http\Controllers\Backend\KaryaController;
 use App\Http\Controllers\Backend\KegiatanController;
@@ -154,6 +155,10 @@ Route::middleware('auth')->group(function () {
     // Statistik Backend
     Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik.index');
     Route::put('/statistik/{id}', [StatistikController::class, 'update'])->name('statistik.update');
+
+    // Detail Information Backend
+    Route::get('/detail-info', [DetailInformationController::class, 'index'])->name('detail-info.index');
+    Route::put('/detail-info/{id}', [DetailInformationController::class, 'update'])->name('detail-info.update');
 
     // ----------------- CLEAR SESSION ROUTE ----------------- //
     Route::post('/clear-session', [SessionController::class, 'clearSession'])->name('clear.session');
