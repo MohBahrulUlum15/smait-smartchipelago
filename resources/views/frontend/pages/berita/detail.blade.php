@@ -4,6 +4,44 @@
 
 @push('styles')
     {{-- For styles --}}
+
+    <style>
+        /* Container full width */
+        .supporting-images-container {
+            width: 100%;
+            /* Full width */
+            background-color: #ffffff;
+            /* Latar belakang putih */
+            padding: 20px;
+            /* Padding di dalam container */
+            border-radius: 8px;
+            /* Membuat sudut container melengkung */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Memberikan efek bayangan */
+        }
+
+        /* Wrapper untuk gambar dengan rasio 16:9 */
+        .supporting-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* Rasio 16:9 (9/16 = 0.5625 * 100) */
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Gambar di dalam wrapper */
+        .supporting-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Menjaga rasio gambar */
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -24,6 +62,23 @@
                             <img src="{{ $berita->featured_image ?? '' }}" alt="" class="img-fluid"
                                 style="max-height: 360px; width: 100%; object-fit: cover;">
                         </div>
+                        @if (!empty($supportingImages))
+                            <div class="supporting-images-container mt-4 mx-auto">
+                                {{-- <h5 class="text-center mb-3">Gambar Pendukung:</h5> --}}
+                                <div class="row">
+                                    @foreach ($supportingImages as $image)
+                                        <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                            <div class="supporting-image-wrapper">
+                                                <img src="{{ asset($image) }}" alt="Supporting Image"
+                                                    class="img-fluid supporting-image" data-toggle="modal"
+                                                    data-target="#imageModal"
+                                                    onclick="showImageInModal('{{ asset($image) }}')">
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
                         <div class="post-content">
                             <div class="post-date">
                                 <span class="day">{{ $berita->created_at->format('d') ?? '' }}</span>
@@ -194,8 +249,34 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
+
+    <!-- Modal untuk menampilkan gambar -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    {{-- <h5 class="modal-title" id="imageModalLabel">Gambar Pendukung</h5> --}}
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="Supporting Image" class="img-fluid"
+                        style="max-height: 80vh;">
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @push('scripts')
     {{-- For scripts --}}
+
+    <script>
+        function showImageInModal(imageUrl) {
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageUrl;
+        }
+    </script>
 @endpush

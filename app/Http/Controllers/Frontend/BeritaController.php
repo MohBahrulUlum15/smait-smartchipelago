@@ -29,12 +29,16 @@ class BeritaController extends Controller
 
         $beritaTerbaru = News::where('on_delete', 0)->orderBy('created_at', 'desc')->limit(5)->get();
 
+        // Decode JSON data in the 'supporting_images' column
+        $supportingImages = $berita->supporting_images ? json_decode($berita->supporting_images, true) : [];
+
         return view('frontend.pages.berita.detail', [
             'pageTitle' => 'Detail Berita',
             'motto' => $motto,
             'berita' => $berita,
             'komentar' => $komentar,
             'beritaTerbaru' => $beritaTerbaru,
+            'supportingImages' => $supportingImages,
         ]);
     }
 
