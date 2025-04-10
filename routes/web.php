@@ -58,7 +58,11 @@ Route::get('/website/berita/{id}', [FrontendBeritaController::class, 'show'])->n
 Route::post('/website/berita/post-komentar/{id}', [FrontendBeritaController::class, 'postKomentar'])->name('frontend-berita.komentar');
 
 Route::get('/website/kegiatan', [FrontendKegiatanController::class, 'index'])->name('frontend-kegiatan.index');
+
 Route::get('/website/artikel', [FrontendArtikelController::class, 'index'])->name('frontend-artikel.index');
+Route::get('/website/artikel/{id}', [FrontendArtikelController::class, 'show'])->name('frontend-artikel.show');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard-backend', [BackendDashboardController::class, 'index'])->name('dashboard');

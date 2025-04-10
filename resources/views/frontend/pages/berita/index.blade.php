@@ -4,6 +4,16 @@
 
 @push('styles')
     {{-- For styles --}}
+    <style>
+        .blog-desc p {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            /* Batasi hingga 4 baris */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -42,7 +52,8 @@
                                 {{-- <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span> --}}
                             </div>
                             <div class="blog-title">
-                                <h2><a href="#" title="">{{ $item->title }}</a></h2>
+                                <h2><a href="{{ route('frontend-berita.show', $item->id) }}"
+                                        title="">{{ $item->title }}</a></h2>
                             </div>
                             <div class="blog-desc">
                                 <p>{{ strip_tags($item->content) }}</p>

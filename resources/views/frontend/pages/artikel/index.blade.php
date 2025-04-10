@@ -20,20 +20,21 @@
     {{-- For content --}}
     <div class="all-title-box">
         <div class="container text-center">
-            <h1>SMA Islam Terpadu Al-Ghozali<span class="m_1">{{ $motto->deskripsi ?? 'Disini Tulisan Motto' }}</span>
+            <h1>Semua Artikel<span class="m_1">Temukan artikel terbaru dan informasi terkini dari SMAIT Al-Ghozali di
+                    halaman ini.</span></h1>
             </h1>
         </div>
     </div>
 
     <div id="overviews" class="section wb">
         <div class="container">
-            <div class="section-title row text-center">
+            {{-- <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
                     <p class="lead">Artikel SMAIT Al-Ghozali</p>
                 </div>
             </div><!-- end title -->
 
-            <hr class="invis">
+            <hr class="invis"> --}}
 
             <div class="row">
                 @forelse ($artikel as $item)
@@ -49,13 +50,15 @@
                                 {{-- <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span> --}}
                             </div>
                             <div class="blog-title">
-                                <h2><a href="#" title="">{{ $item->judul_artikel }}</a></h2>
+                                <h2><a href="{{ route('frontend-artikel.show', $item->id) }}"
+                                        title="">{{ $item->judul_artikel }}</a></h2>
                             </div>
                             <div class="blog-desc">
                                 <p>{{ strip_tags($item->isi_artikel) }}</p>
                             </div>
                             <div class="blog-button">
-                                <a class="hover-btn-new orange" href="#"><span>Read More<span></a>
+                                <a class="hover-btn-new orange"
+                                    href="{{ route('frontend-artikel.show', $item->id) }}"><span>Read More<span></a>
                             </div>
                         </div>
                     </div><!-- end col -->

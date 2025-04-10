@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', $pageTitle ?? 'Berita')
+@section('title', $pageTitle ?? 'Artikel')
 
 @push('styles')
     {{-- For styles --}}
@@ -48,7 +48,7 @@
     {{-- For content --}}
     <div class="all-title-box">
         <div class="container text-center">
-            <h1>{{ $berita->title ?? '' }}<span class="m_1">SMAIT Al-Ghozali Jember</span></h1>
+            <h1>Detail Artikel<span class="m_1">SMAIT Al-Ghozali Jember</span></h1>
             </h1>
         </div>
     </div>
@@ -59,7 +59,7 @@
                 <div class="col-lg-9 blog-post-single">
                     <div class="blog-item">
                         <div class="image-blog">
-                            <img src="{{ $berita->featured_image ?? '' }}" alt="" class="img-fluid"
+                            <img src="{{ $artikel->gambar_artikel ?? '' }}" alt="" class="img-fluid"
                                 style="max-height: 360px; width: 100%; object-fit: cover;">
                         </div>
                         @if (!empty($supportingImages))
@@ -81,21 +81,21 @@
                         @endif
                         <div class="post-content">
                             <div class="post-date">
-                                <span class="day">{{ $berita->created_at->format('d') ?? '' }}</span>
-                                <span class="month">{{ $berita->created_at->format('M') ?? '' }}</span>
+                                <span class="day">{{ $artikel->created_at->format('d') ?? '' }}</span>
+                                <span class="month">{{ $artikel->created_at->format('M') ?? '' }}</span>
                             </div>
                             <div class="meta-info-blog">
                                 <span><i class="fa fa-calendar"></i> <a
-                                        href="#">{{ $berita->created_at->format('d M Y') ?? '' }}</a> </span>
-                                <span><i class="fa fa-tag"></i> <a href="#">{{ $berita->type ?? '' }}</a> </span>
-                                <span><i class="fa fa-user"></i> <a href="#">{{ $berita->author ?? '' }}</a></span>
+                                        href="#">{{ $artikel->created_at->format('d M Y') ?? '' }}</a> </span>
+                                {{-- <span><i class="fa fa-tag"></i> <a href="#">{{ $artikel->type ?? '' }}</a> </span>
+                                <span><i class="fa fa-user"></i> <a href="#">{{ $artikel->author ?? '' }}</a></span> --}}
                             </div>
                             <div class="blog-title">
-                                <h2><a href="#" title="">{{ $berita->title ?? '' }}</a></h2>
+                                <h2><a href="#" title="">{{ $artikel->judul_artikel ?? '' }}</a></h2>
                             </div>
                             <div class="blog-desc">
-                                {{-- <p>{{ strip_tags($berita->content) ?? '' }}</p> --}}
-                                <p>{!! $berita->content ?? '' !!}</p>
+                                {{-- <p>{{ strip_tags($artikel->isi_artikel) ?? '' }}</p> --}}
+                                <p>{!! $artikel->isi_artikel ?? '' !!}</p>
                                 {{-- <blockquote class="default">
                                     Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus
                                     id sodales in, auctor fringilla libero. Pellentesque pellentesque eget tempor tellus.
@@ -137,7 +137,8 @@
                         </div>
                     </div> --}}
 
-                    <div class="blog-comments">
+                    {{-- KOMENTAR --}}
+                    {{-- <div class="blog-comments">
                         <h4>{{ 'Komentar (' . count($komentar) . ')' }}</h4>
                         <div id="comment-blog">
                             <ul class="comment-list">
@@ -151,7 +152,6 @@
                                             <div class="comment-meta">
                                                 <a href="#"
                                                     class="comment-date link-style1">{{ $item->created_at->format('d M Y') }}</a>
-                                                {{-- <a class="comment-reply-link link-style3" href="#respond">Reply »</a> --}}
                                             </div>
                                             <div class="comment-body">
                                                 <p>{{ $item->komentar }}</p>
@@ -169,24 +169,24 @@
                     <div class="comments-form">
                         <h4>Tinggalkan Komentar</h4>
                         <div class="comment-form-main">
-                            <form action="{{ route('frontend-berita.komentar', $berita->id) }}" id="commentform"
+                            <form action="{{ route('frontend-artikel.komentar', $artikel->id) }}" id="commentform"
                                 class="comment-form" method="POST">
                                 @csrf
                                 @method('POST')
-                                <input type="hidden" name="berita_id" value="{{ $berita->id }}">
+                                <input type="hidden" name="artikel_id" value="{{ $artikel->id }}">
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <input class="form-control" name="nama" placeholder="Nama" id="nama"
                                                 type="text" required>
                                         </div>
                                     </div>
-                                    {{-- <div class="col-md-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <input class="form-control" name="email" placeholder="Email" id="email"
                                                 type="email">
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <textarea class="form-control" name="komentar" placeholder="Komentar" id="komentar" cols="30" rows="2"
@@ -200,7 +200,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div><!-- end col -->
                 <div class="col-lg-3 col-12 right-single">
@@ -216,19 +216,19 @@
                         </div>
                     </div> --}}
                     <div class="widget-categories">
-                        <h3 class="widget-title">Berita Terbaru</h3>
+                        <h3 class="widget-title">Artikel Terbaru</h3>
                         <ul>
-                            @forelse ($beritaTerbaru as $item)
+                            @forelse ($artikelTerbaru as $item)
                                 <li>
-                                    <a href="{{ route('frontend-berita.show', $item->id) }}">{{ $item->title }}</a>
+                                    <a href="{{ route('frontend-artikel.show', $item->id) }}">{{ $item->judul_artikel }}</a>
                                 </li>
                             @empty
-                                <li><a href="#">Belum ada data berita.</a></li>
+                                <li><a href="#">Belum ada data artikel.</a></li>
                             @endforelse
                         </ul>
                     </div>
                     {{-- <div class="widget-tags">
-                        <h3 class="widget-title">Tags Berita</h3>
+                        <h3 class="widget-title">Tags Artikel</h3>
                         <ul class="tags">
 
                             <li><a href="#"><b>business</b></a></li>
@@ -263,8 +263,7 @@
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    <img id="modalImage" src="" alt="Supporting Image" class="img-fluid"
-                        style="max-height: 80vh;">
+                    <img id="modalImage" src="" alt="Supporting Image" class="img-fluid" style="max-height: 80vh;">
                 </div>
             </div>
         </div>

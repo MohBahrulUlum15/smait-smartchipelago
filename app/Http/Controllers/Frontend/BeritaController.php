@@ -48,7 +48,7 @@ class BeritaController extends Controller
 
         $request->validate([
             'nama' => 'required',
-            'email' => 'required',
+            'email' => 'nullable',
             'komentar' => 'required',
         ]);
 
