@@ -33,19 +33,20 @@ use App\Http\Controllers\Frontend\ProgramUnggulanController as FrontendProgramUn
 Route::get('/', [BerandaController::class, 'index'])->name('base-frontend-beranda.index');
 
 
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::get('/login-testing', function () {
-    return view('backend.auth.login');
-})->name('login-testing');
+// Route::get('/login-testing', function () {
+//     return view('backend.auth.login');
+// })->name('login-testing');
 
 // Route::get('/website/login', [AuthenticatedSessionController::class, 'create'])->name('login-admin');
 
