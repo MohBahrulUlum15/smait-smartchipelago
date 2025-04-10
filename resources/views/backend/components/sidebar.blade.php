@@ -67,10 +67,10 @@
             </li>
 
             {{-- DETAIL INFORMATION --}}
-            {{-- <li class="{{ Request::is('detail-info*') ? 'active' : '' }}">
+            <li class="{{ Request::is('detail-info*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('detail-info.index') }}"><i class="fas fa-info-circle"></i>
                     <span>Detail Informasi</span></a>
-            </li> --}}
+            </li>
 
 
 

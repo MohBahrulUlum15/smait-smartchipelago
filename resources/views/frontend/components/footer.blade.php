@@ -10,14 +10,15 @@
                     <div class="widget-title">
                         <h3>SMAIT Al-Ghozali Jember</h3>
                     </div>
-                    <p> “Sekolah Impian Calon Pemimpin Masa Depan Berkarakter dan Berbudaya”.</p>
+                    <p>{{ $mottoInFooter->deskripsi ?? 'Motto Sekolah' }}</p>
                     <div class="footer-right">
                         <ul class="footer-links-soi">
-                            <li><a href="https://www.facebook.com/smai.alghozalijember/" target="blank"><i
+                            <li><a href="{{ $dataFooter->facebook_link_info ?? '#' }}" target="blank"><i
                                         class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/smait_alghozalijember.smartchi/" target="blank"><i
+                            <li><a href="{{ $dataFooter->instagram_link_info ?? '#' }}" target="blank"><i
                                         class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://www.youtube.com/" target="blank"><i class="fa fa-youtube-play"></i></a>
+                            <li><a href="{{ $dataFooter->youtube_link_info ?? '#' }}" target="blank"><i
+                                        class="fa fa-youtube-play"></i></a>
                             </li>
                         </ul><!-- end links -->
                     </div>
@@ -31,10 +32,18 @@
                     </div>
 
                     <ul class="footer-links">
-                        <li><a href="mailto:#">smai.alghozalijbr@gmail.com</a></li>
+                        {{-- <li><a href="mailto:#">smai.alghozalijbr@gmail.com</a></li>
                         <li><a href="#">smait.smartchipelago.com</a></li>
                         <li>Jl. Kaliurang No. 175, Sumbersari, Jember</li>
-                        <li>+62 8213 9537 299</li>
+                        <li>+62 8213 9537 299</li> --}}
+                        <li><a
+                                href="mailto:{{ $dataFooter->email_info ?? 'email@info' }}">{{ $dataFooter->email_info ?? 'email@info' }}</a>
+                        </li>
+                        <li><a
+                                href="{{ $dataFooter->website_link_info ?? '#' }}">{{ $dataFooter->website_name_info ?? 'SMAIT Al-Ghozali' }}</a>
+                        </li>
+                        <li>{{ $dataFooter->address_info ?? 'Address Info' }}</li>
+                        <li>{{ $dataFooter->phone_info ?? 'Phone Info' }}</li>
                     </ul><!-- end links -->
                 </div><!-- end clearfix -->
             </div><!-- end col -->
