@@ -38,7 +38,8 @@
                                         alt="" class="img-fluid">
                                 </div>
                                 <div class="course-title text-center">
-                                    <h2><a href="#" title="">{{ $item->nama_program ?? '' }}</a></h2>
+                                    <h2><a href="{{ route('frontend-program-unggulan.show', $item->id) }}"
+                                            title="">{{ $item->nama_program ?? '' }}</a></h2>
                                 </div>
                             </div>
                         </div>

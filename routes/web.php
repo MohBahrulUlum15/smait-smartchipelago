@@ -49,16 +49,25 @@ Route::get('/website/login', [AuthenticatedSessionController::class, 'create'])-
 Route::get('/website/', [BerandaController::class, 'index'])->name('frontend-beranda.index');
 Route::get('/website/visi-misi', [FrontendVisiMisiController::class, 'index'])->name('frontend-visi-misi.index');
 Route::get('/website/pengajar', [FrontendPengajarController::class, 'index'])->name('frontend-pengajar.index');
+
+// Program FE
 Route::get('/website/program-unggulan', [FrontendProgramUnggulanController::class, 'index'])->name('frontend-program-unggulan.index');
+Route::get('/website/program-unggulan/{id}', [FrontendProgramUnggulanController::class, 'show'])->name('frontend-program-unggulan.show');
+
+// Fasilitas FE
 Route::get('/website/fasilitas', [FrontendFasilitasController::class, 'index'])->name('frontend-fasilitas.index');
+Route::get('/website/fasilitas/{id}', [FrontendFasilitasController::class, 'show'])->name('frontend-fasilitas.show');
+
 Route::get('/website/prestasi', [FrontendPrestasiController::class, 'index'])->name('frontend-prestasi.index');
 
+// Berita FE
 Route::get('/website/berita', [FrontendBeritaController::class, 'index'])->name('frontend-berita.index');
 Route::get('/website/berita/{id}', [FrontendBeritaController::class, 'show'])->name('frontend-berita.show');
 Route::post('/website/berita/post-komentar/{id}', [FrontendBeritaController::class, 'postKomentar'])->name('frontend-berita.komentar');
 
 Route::get('/website/kegiatan', [FrontendKegiatanController::class, 'index'])->name('frontend-kegiatan.index');
 
+// Artikel FE
 Route::get('/website/artikel', [FrontendArtikelController::class, 'index'])->name('frontend-artikel.index');
 Route::get('/website/artikel/{id}', [FrontendArtikelController::class, 'show'])->name('frontend-artikel.show');
 
