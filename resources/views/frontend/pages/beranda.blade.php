@@ -405,13 +405,15 @@
                                 {{-- <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span> --}}
                             </div>
                             <div class="blog-title">
-                                <h2><a href="#" title="">{{ $item->title }}</a></h2>
+                                <h2><a href="{{ route('frontend-berita.show', $item->id) }}"
+                                        title="">{{ $item->title }}</a></h2>
                             </div>
                             <div class="blog-desc">
-                                <p>{!! $item->content !!}</p>
+                                <p>{{ strip_tags($item->content) }}</p>
                             </div>
                             <div class="blog-button">
-                                <a class="hover-btn-new orange" href="#"><span>Baca Berita<span></a>
+                                <a class="hover-btn-new orange"
+                                    href="{{ route('frontend-berita.show', $item->id) }}"><span>Baca Berita<span></a>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -510,6 +512,23 @@
                         slidesPerView: 3
                     },
                 },
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const paragraphs = document.querySelectorAll('.blog-desc p');
+            paragraphs.forEach(paragraph => {
+                const maxLines = 3;
+                const lineHeight = parseFloat(getComputedStyle(paragraph).lineHeight);
+                const maxHeight = maxLines * lineHeight;
+
+                if (paragraph.scrollHeight > maxHeight) {
+                    paragraph.style.height = `${maxHeight}px`;
+                    paragraph.style.overflow = 'hidden';
+                    paragraph.style.textOverflow = 'ellipsis';
+                }
             });
         });
     </script>

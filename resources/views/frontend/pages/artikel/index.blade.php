@@ -4,6 +4,16 @@
 
 @push('styles')
     {{-- For styles --}}
+    <style>
+        .blog-desc p {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            /* Batasi hingga 4 baris */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -42,7 +52,7 @@
                                 <h2><a href="#" title="">{{ $item->judul_artikel }}</a></h2>
                             </div>
                             <div class="blog-desc">
-                                <p>{!! $item->isi_artikel !!}</p>
+                                <p>{{ strip_tags($item->isi_artikel) }}</p>
                             </div>
                             <div class="blog-button">
                                 <a class="hover-btn-new orange" href="#"><span>Read More<span></a>
@@ -71,4 +81,20 @@
 
 @push('scripts')
     {{-- For scripts --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const paragraphs = document.querySelectorAll('.blog-desc p');
+            paragraphs.forEach(paragraph => {
+                const maxLines = 3;
+                const lineHeight = parseFloat(getComputedStyle(paragraph).lineHeight);
+                const maxHeight = maxLines * lineHeight;
+
+                if (paragraph.scrollHeight > maxHeight) {
+                    paragraph.style.height = `${maxHeight}px`;
+                    paragraph.style.overflow = 'hidden';
+                    paragraph.style.textOverflow = 'ellipsis';
+                }
+            });
+        });
+    </script>
 @endpush

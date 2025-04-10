@@ -26,8 +26,8 @@
                                 <img src="{{ $item->foto ?? asset('assets/frontend/images/team-01.png') }}">
                                 <div class="social">
                                     <ul>
-                                        <li><a href="{{ $item->facebook ?? '#' }}" class="fa fa-facebook"></a></li>
-                                        <li><a href="{{ $item->instagram ?? '#' }}" class="fa fa-instagram"></a></li>
+                                        {{-- <li><a href="{{ $item->facebook ?? '#' }}" class="fa fa-facebook"></a></li>
+                                        <li><a href="{{ $item->instagram ?? '#' }}" class="fa fa-instagram"></a></li> --}}
                                         {{-- <li><a href="{{  }}" class="fa fa-linkedin"></a></li>
                                         <li><a href="{{  }}" class="fa fa-skype"></a></li> --}}
                                     </ul>

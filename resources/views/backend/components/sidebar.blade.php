@@ -44,10 +44,7 @@
                 <a class="nav-link" href="{{ route('statistik.index') }}"><i class="fas fa-chart-bar"></i>
                     <span>Statistik</span></a>
             </li>
-            <li class="{{ Request::is('detail-info*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('detail-info.index') }}"><i class="fas fa-chart-bar"></i>
-                    <span>Detail Informasi</span></a>
-            </li>
+
             {{-- <li class="{{ Request::is('prestasi*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('prestasi.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Prestasi</span></a>
@@ -68,6 +65,15 @@
                 <a class="nav-link" href="{{ route('artikel.index') }}"><i class="fas fa-newspaper"></i>
                     <span>Artikel</span></a>
             </li>
+
+            {{-- DETAIL INFORMATION --}}
+            {{-- <li class="{{ Request::is('detail-info*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('detail-info.index') }}"><i class="fas fa-info-circle"></i>
+                    <span>Detail Informasi</span></a>
+            </li> --}}
+
+
+
             {{-- <li class="menu-header">Starter</li>
             <li class="nav-item dropdown {{ $type_menu === 'layout' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
@@ -365,11 +371,11 @@
             </a>
         </div> --}}
 
-        <div class="hide-sidebar-mini mt-2 mb-2 p-3">
-            <a href="{{ route('beranda.index') }}" target="_blank"
+        {{-- <div class="hide-sidebar-mini mt-2 mb-2 p-3">
+            <a href="{{ route('base-frontend-beranda.index') }}" target="_blank"
                 class="btn btn-primary btn-lg btn-block btn-icon-split">
                 <i class="fas fa-rocket"></i> Lihat Website
             </a>
-        </div>
+        </div> --}}
     </aside>
 </div>

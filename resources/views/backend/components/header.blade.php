@@ -228,6 +228,9 @@
                 <a href="features-settings.html" class="dropdown-item has-icon">
                     <i class="fas fa-cog"></i> Settings
                 </a> --}}
+                <a href="{{ route('base-frontend-beranda.index') }}" target="_blank" class="dropdown-item has-icon">
+                    <i class="fas fa-rocket"></i> Lihat Website
+                </a>
                 <div class="dropdown-divider"></div>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf

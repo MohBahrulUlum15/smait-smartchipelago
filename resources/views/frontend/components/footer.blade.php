@@ -13,9 +13,12 @@
                     <p> “Sekolah Impian Calon Pemimpin Masa Depan Berkarakter dan Berbudaya”.</p>
                     <div class="footer-right">
                         <ul class="footer-links-soi">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                            <li><a href="https://www.facebook.com/smai.alghozalijember/" target="blank"><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/smait_alghozalijember.smartchi/" target="blank"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/" target="blank"><i class="fa fa-youtube-play"></i></a>
+                            </li>
                         </ul><!-- end links -->
                     </div>
                 </div><!-- end clearfix -->

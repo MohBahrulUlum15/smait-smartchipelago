@@ -45,7 +45,7 @@
                                 <h2><a href="#" title="">{{ $item->title }}</a></h2>
                             </div>
                             <div class="blog-desc">
-                                <p>{!! $item->content !!}</p>
+                                <p>{{ strip_tags($item->content) }}</p>
                             </div>
                             <div class="blog-button">
                                 <a class="hover-btn-new orange"
@@ -75,4 +75,20 @@
 
 @push('scripts')
     {{-- For scripts --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const paragraphs = document.querySelectorAll('.blog-desc p');
+            paragraphs.forEach(paragraph => {
+                const maxLines = 3;
+                const lineHeight = parseFloat(getComputedStyle(paragraph).lineHeight);
+                const maxHeight = maxLines * lineHeight;
+
+                if (paragraph.scrollHeight > maxHeight) {
+                    paragraph.style.height = `${maxHeight}px`;
+                    paragraph.style.overflow = 'hidden';
+                    paragraph.style.textOverflow = 'ellipsis';
+                }
+            });
+        });
+    </script>
 @endpush
