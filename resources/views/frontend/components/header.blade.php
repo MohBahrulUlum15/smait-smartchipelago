@@ -60,7 +60,8 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="hover-btn-new log orange" href="{{ route('login-admin') }}"><span>Login</span></a>
+                    <li><a class="hover-btn-new log orange" href="{{ route('login') }}"
+                            target="blank"><span>Login</span></a>
                     </li>
                 </ul>
             </div>

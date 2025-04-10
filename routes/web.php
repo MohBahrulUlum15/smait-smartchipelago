@@ -43,7 +43,11 @@ Route::get('/', [BerandaController::class, 'index'])->name('base-frontend-berand
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-Route::get('/website/login', [AuthenticatedSessionController::class, 'create'])->name('login-admin');
+Route::get('/login-testing', function () {
+    return view('backend.auth.login');
+})->name('login-testing');
+
+// Route::get('/website/login', [AuthenticatedSessionController::class, 'create'])->name('login-admin');
 
 // Landing Page Route
 Route::get('/website/', [BerandaController::class, 'index'])->name('frontend-beranda.index');
