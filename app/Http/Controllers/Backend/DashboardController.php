@@ -12,7 +12,22 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.dashboard.index');
+        $jumlahPengajar = \App\Models\Pengajar::where('on_delete', 0)->count();
+        $jumlahProgram = \App\Models\Program::where('on_delete', 0)->count();
+        $jumlahFasilitas = \App\Models\Fasilitas::where('on_delete', 0)->count();
+        $jumlahBerita = \App\Models\News::where('on_delete', 0)->count();
+        $jumlahArtikel = \App\Models\Artikel::where('on_delete', 0)->count();
+        return view(
+            'backend.pages.dashboard.index',
+            [
+                'title' => 'Dashboard',
+                'jumlahPengajar' => $jumlahPengajar,
+                'jumlahProgram' => $jumlahProgram,
+                'jumlahFasilitas' => $jumlahFasilitas,
+                'jumlahBerita' => $jumlahBerita,
+                'jumlahArtikel' => $jumlahArtikel,
+            ]
+        );
     }
 
     /**

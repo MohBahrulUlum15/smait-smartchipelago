@@ -33,11 +33,12 @@
                     <span>Pengajar</span></a>
             </li>
             <li class="{{ Request::is('program*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('program.index') }}"><i class="fas fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('program.index') }}"><i class="fas fa-solid fa-medal"></i>
                     <span>Program</span></a>
             </li>
             <li class="{{ Request::is('fasilitas*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('fasilitas.index') }}"><i class="fas fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('fasilitas.index') }}"><i
+                        class="fas fa-solid fa-universal-access"></i>
                     <span>Fasilitas</span></a>
             </li>
             <li class="{{ Request::is('statistik*') ? 'active' : '' }}">
@@ -62,7 +63,7 @@
                     <span>Berita</span></a>
             </li>
             <li class="{{ Request::is('artikel*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('artikel.index') }}"><i class="fas fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('artikel.index') }}"><i class="fas fa-file-lines"></i>
                     <span>Artikel</span></a>
             </li>
 
