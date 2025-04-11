@@ -48,9 +48,9 @@
                         </div> --}}
 
                         <div class="form-group text-right">
-                            {{-- <a href="" class="float-left mt-3">
+                            <a href="{{ route('reset-password-admin') }}" class="float-left mt-3">
                                 Forgot Password?
-                            </a> --}}
+                            </a>
                             <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="4">
                                 Login
                             </button>
@@ -85,4 +85,58 @@
 @endsection
 
 @push('scripts')
+    <!-- JS Libraies -->
+    <script src="{{ asset('assets/backend/library/sweetalert/dist/sweetalert.min.js') }}"></script>
+
+    <!-- Page Specific JS File -->
+    <script src="{{ asset('assets/backend/js/page/modules-sweetalert.js') }}"></script>
+
+    <!-- Sweet Alert Notifikasi dengan Penghapusan Session -->
+    <script>
+        $(document).ready(function() {
+            // Sweet Alert untuk success
+            @if (Session::has('success'))
+                swal({
+                    title: 'Sukses!',
+                    text: '{{ Session::get('success') }}',
+                    icon: 'success',
+                    button: 'OK'
+                }).then(() => {
+                    // Kirim request untuk menghapus session
+                    $.ajax({
+                        url: '{{ route('clear.session') }}',
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            console.log('Session cleared');
+                        }
+                    });
+                });
+            @endif
+
+            // Sweet Alert untuk error
+            @if (Session::has('error'))
+                swal({
+                    title: 'Oops...',
+                    text: '{{ Session::get('error') }}',
+                    icon: 'error',
+                    button: 'OK'
+                }).then(() => {
+                    // Kirim request untuk menghapus session
+                    $.ajax({
+                        url: '{{ route('clear.session') }}',
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            console.log('Session cleared');
+                        }
+                    });
+                });
+            @endif
+        });
+    </script>
 @endpush

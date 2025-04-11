@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Backend\ArtikelController;
@@ -29,6 +27,7 @@ use App\Http\Controllers\Frontend\PengajarController as FrontendPengajarControll
 use App\Http\Controllers\Frontend\PrestasiController as FrontendPrestasiController;
 use App\Http\Controllers\Frontend\VisiMisiController as FrontendVisiMisiController;
 use App\Http\Controllers\Frontend\ProgramUnggulanController as FrontendProgramUnggulanController;
+use App\Http\Controllers\Test\ResetPasswordController;
 
 Route::get('/', [BerandaController::class, 'index'])->name('base-frontend-beranda.index');
 
@@ -38,17 +37,20 @@ Route::get('/', [BerandaController::class, 'index'])->name('base-frontend-berand
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 // Route::get('/login-testing', function () {
 //     return view('backend.auth.login');
 // })->name('login-testing');
 
 // Route::get('/website/login', [AuthenticatedSessionController::class, 'create'])->name('login-admin');
+
+Route::get('/reset-password-admin', [ResetPasswordController::class, 'index'])->name('reset-password-admin');
+Route::post('/reset-password-admin', [ResetPasswordController::class, 'store'])->name('reset-password-admin.store');
 
 // Landing Page Route
 Route::get('/website/', [BerandaController::class, 'index'])->name('frontend-beranda.index');

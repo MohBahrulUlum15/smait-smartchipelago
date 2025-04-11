@@ -220,7 +220,7 @@
             @endif
 
             // Sweet Alert untuk error
-            @if (Session::has('errorr'))
+            @if (Session::has('error'))
                 swal({
                     title: 'Oops...',
                     text: '{{ Session::get('error') }}',
