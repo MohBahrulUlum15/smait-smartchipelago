@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\DetailInformation;
+use App\Models\VisiMisiTujuanMotto;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         View::composer('*', function ($view) {
-            $dataFooter = \App\Models\DetailInformation::first();
-            $mottoInFooter = \App\Models\VisiMisiTujuanMotto::where('tipe', 'motto')->first();
+            $dataFooter = DetailInformation::first();
+            $mottoInFooter = VisiMisiTujuanMotto::where('tipe', 'motto')->first();
             $view->with('dataFooter', $dataFooter);
             $view->with('mottoInFooter', $mottoInFooter);
         });
