@@ -28,10 +28,14 @@ use App\Http\Controllers\Frontend\PrestasiController as FrontendPrestasiControll
 use App\Http\Controllers\Frontend\VisiMisiController as FrontendVisiMisiController;
 use App\Http\Controllers\Frontend\ProgramUnggulanController as FrontendProgramUnggulanController;
 use App\Http\Controllers\Test\ResetPasswordController;
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/symlink-storage', function () {
+    Artisan::call('storage:link');
+    return 'Symlink storage created successfully.';
+});
 
 Route::get('/', [BerandaController::class, 'index'])->name('base-frontend-beranda.index');
-
-
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -190,6 +194,5 @@ Route::middleware('auth')->group(function () {
 
 // Route::get('/beranda', [BackendBerandaController::class, 'index'])->name('beranda.index');
 // Route::put('/beranda/{id}', [BackendBerandaController::class, 'update'])->name('beranda.update');
-
 
 require __DIR__ . '/auth.php';
