@@ -1,0 +1,48 @@
+C:\laragon\www\smait-smartchipelago\public\assets\frontend\style.css
+
+    .box-slider .carousel-control-prev{
+        border-radius: 2px;
+        background: #EEA412;
+        /* background: rgba(238, 164, 18, 0.1); Warna oranye dengan transparansi 80% */
+        /* background: transparent; */
+        position: absolute;
+        left: 0px;
+        font-size: 38px;
+        font-size: 32px;
+        top: 40%;
+        width: 60px;
+        height: 60px;
+        width: 50px;
+        height: 50px;
+        line-height: 20px;
+        opacity: 1;
+    }
+    .box-slider .carousel-control-next{
+        border-radius: 2px;
+        background: #EEA412;
+        /* background: rgba(238, 164, 18, 0.1); Warna oranye dengan transparansi 80% */
+        /* background: transparent; */
+        position: absolute;
+        right: 0px;
+        font-size: 38px;
+        font-size: 32px;
+        top: 40%;
+        width: 60px;
+        height: 60px;
+        width: 50px;
+        height: 50px;
+        line-height: 20px;
+        opacity: 1;
+    }
+
+
+C:\laragon\www\smait-smartchipelago\resources\views\backend\auth\layouts\app.blade.php
+C:\laragon\www\smait-smartchipelago\resources\views\backend\layouts\app.blade.php
+C:\laragon\www\smait-smartchipelago\resources\views\frontend\layouts\app.blade.php
+
+    {{-- Custom Site Icons / Favicon --}}
+    <link rel="shortcut icon" href="{{ asset('assets/favicon/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('assets/favicon/site.webmanifest') }}">

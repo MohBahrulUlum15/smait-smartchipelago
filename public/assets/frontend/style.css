@@ -711,24 +711,28 @@ a img.aligncenter {
 .box-slider .carousel-control-prev{
 	border-radius: 2px;
 	background: #EEA412;
+    /* background: rgba(238, 164, 18, 0.1); Warna oranye dengan transparansi 80% */
+	/* background: transparent; */
 	position: absolute;
 	left: 0px;
-	font-size: 38px;
+	font-size: 32px;
 	top: 40%;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	line-height: 20px;
 	opacity: 1;
 }
 .box-slider .carousel-control-next{
 	border-radius: 2px;
 	background: #EEA412;
+    /* background: rgba(238, 164, 18, 0.1); Warna oranye dengan transparansi 80% */
+	/* background: transparent; */
 	position: absolute;
 	right: 0px;
-	font-size: 38px;
+	font-size: 32px;
 	top: 40%;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	line-height: 20px;
 	opacity: 1;
 }

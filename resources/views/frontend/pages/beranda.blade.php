@@ -79,6 +79,82 @@
             /* Ukuran bullet non-aktif */
         }
     </style>
+
+    {{-- Styling Carousel --}}
+    {{-- <style>
+        @media (max-width: 768px) {
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                top: 50%;
+                transform: translateY(-50%);
+                width: 30px;
+            }
+
+            .carousel-control-prev {
+                left: 10px;
+            }
+
+            .carousel-control-next {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                top: 50%;
+                transform: translateY(-50%);
+                width: 25px;
+            }
+        }
+    </style> --}}
+    <style>
+        /* Untuk layar dengan lebar tablet dan lebih kecil */
+        @media (max-width: 768px) {
+            .box-slider .carousel-control-prev {
+                border-radius: 2px;
+                /* background: #EEA412; */
+                background: rgba(238, 164, 18, 0.1);
+                /* Warna oranye dengan transparansi 80% */
+                /* background: transparent; */
+                position: absolute;
+                left: 0px;
+                font-size: 20px;
+                top: 40%;
+                width: 32px;
+                height: 32px;
+                line-height: 20px;
+                opacity: 1;
+            }
+
+            .box-slider .carousel-control-next {
+                border-radius: 2px;
+                /* background: #EEA412; */
+                background: rgba(238, 164, 18, 0.1);
+                /* Warna oranye dengan transparansi 80% */
+                /* background: transparent; */
+                position: absolute;
+                right: 0px;
+                font-size: 20px;
+                top: 40%;
+                width: 32px;
+                height: 32px;
+                line-height: 20px;
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                display: none;
+                /* Sembunyikan kontrol carousel */
+            }
+        }
+    </style>
 @endpush
 
 @section('content')
