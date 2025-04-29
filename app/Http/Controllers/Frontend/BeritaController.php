@@ -48,13 +48,11 @@ class BeritaController extends Controller
 
         $request->validate([
             'nama' => 'required',
-            'email' => 'nullable',
             'komentar' => 'required',
         ]);
 
         $komentar = new KomentarBerita();
         $komentar->nama = $request->nama;
-        $komentar->email = $request->email;
         $komentar->komentar = $request->komentar;
         $komentar->news_id = $id;
         $komentar->save();

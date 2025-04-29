@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('komentar_beritas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('email');
             $table->text('komentar');
             $table->foreignId('news_id')->constrained('news')->onDelete('cascade');
             $table->boolean('on_delete')->default(0);
